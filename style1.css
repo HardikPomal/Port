@@ -769,13 +769,13 @@ footer .greetings {
 }
 
 .my_work .work_content .medus {
-    grid-column: span 2;
     background-image: url(./assets/img/project-1.jpg);
     filter: grayscale(75%);
     mix-blend-mode: luminosity;
 }
 
 .my_work .work_content .gnostic {
+    grid-column: span 2;
     background-image: url(./assets/img/project-2.jpeg);
     filter: grayscale(75%);
     mix-blend-mode: luminosity;
