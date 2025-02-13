@@ -82,6 +82,8 @@
 /*#endregion  */
 
 /*#region GLOBAL STYLING */
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     font-family: 'Urbanist', sans-serif;
     margin: 0;
@@ -421,16 +423,12 @@ footer .contact span .contact_no {
     align-items: center;
     flex-direction: column;
     color: var(--black-950);
+    gap: 20px;
 }
 
 footer .contact span .mail_id h4 a,
 footer .contact span .contact_no h4 a {
     color: var(--black-950);
-}
-
-footer .contact span .mail_id img,
-footer .contact span .contact_no img {
-    padding-bottom: 20px;
 }
 
 footer .greetings {
