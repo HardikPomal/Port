@@ -84,8 +84,6 @@
 /*#endregion  */
 
 /*#region GLOBAL STYLING */
-/*  */
-
 * {
     font-family: 'Urbanist', sans-serif;
     margin: 0;
@@ -681,6 +679,13 @@ footer .greetings {
     align-items: center;
     gap: 20px;
     width: 100%;
+}
+
+.technical_skills .skills_content .design_tools .design_title div svg,
+.technical_skills .skills_content .front_end_tools .front_end_title div svg {
+    min-width: 20px;
+    width: 20px;
+    height: 20px;
 }
 
 .technical_skills .skills_content .design_tools .design_content,
