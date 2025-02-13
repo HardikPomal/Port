@@ -1891,35 +1891,35 @@ footer .greetings {
 }
 
 .lets_connect_hero_section .connect_background .gradient_1 {
-    animation-delay: 0.7s;
+    animation-delay: 0.1s;
 }
 
 .lets_connect_hero_section .connect_background .gradient_2 {
-    animation-delay: 0.75s;
+    animation-delay: 0.15s;
 }
 
 .lets_connect_hero_section .connect_background .gradient_3 {
-    animation-delay: 0.8s;
+    animation-delay: 0.2s;
 }
 
 .lets_connect_hero_section .connect_background .gradient_4 {
-    animation-delay: 0.85s;
+    animation-delay: 0.25s;
 }
 
 .lets_connect_hero_section .connect_background .gradient_5 {
-    animation-delay: 0.9s;
+    animation-delay: 0.3s;
 }
 
 .lets_connect_hero_section .connect_background .gradient_6 {
-    animation-delay: 0.95s;
+    animation-delay: 0.35s;
 }
 
 .lets_connect_hero_section .connect_background .gradient_7 {
-    animation-delay: 1s;
+    animation-delay: 0.4s;
 }
 
 .lets_connect_hero_section .connect_background .gradient_8 {
-    animation-delay: 1.05s;
+    animation-delay: 0.45s;
 }
 
 @keyframes slideInFromBottom {
