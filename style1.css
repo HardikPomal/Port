@@ -779,6 +779,8 @@ footer .greetings {
     background-image: url(./assets/img/project-2.jpeg);
     filter: grayscale(75%);
     mix-blend-mode: luminosity;
+    background-size: cover;
+    background-position: center;
 }
 
 .my_work .work_content .learnerhub {
