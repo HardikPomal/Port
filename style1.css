@@ -227,6 +227,7 @@ p {
 .main_button svg {
     width: 20px;
     height: 20px;
+    fill: var(--black-50) !important;
 }
 
 .icon_button {
@@ -271,6 +272,7 @@ p {
 .light_button svg {
     width: 20px;
     height: 20px;
+    fill: var(--black-950) !important;
 }
 
 .icon_button_rotate_left {
@@ -354,7 +356,6 @@ header nav ul {
 header nav ul .mobile_menu {
     display: none;
 }
-
 
 /*#endregion  */
 
@@ -1812,6 +1813,139 @@ footer .greetings {
 
 /*#endregion */
 
+/*#region LET'S CONNECT > HERO SECTION */
+
+.lets_connect_hero_section {
+    position: relative;
+    height: 800px;
+    max-height: 800px;
+    overflow: hidden;
+}
+
+.lets_connect_hero_section .connect_background {
+    display: flex;
+    height: 100%;
+}
+
+.lets_connect_hero_section .connect_background .gradient_1 {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, var(--black-950) 0%, var(--black-950) 30%, var(--primary-500) 100%);
+}
+
+.lets_connect_hero_section .connect_background .gradient_2 {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, var(--black-950) 0%, var(--black-950) 40%, var(--primary-500) 100%);
+}
+
+.lets_connect_hero_section .connect_background .gradient_3 {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, var(--black-950) 0%, var(--black-950) 45%, var(--primary-500) 100%);
+}
+
+.lets_connect_hero_section .connect_background .gradient_4 {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, var(--black-950) 0%, var(--black-950) 50%, var(--primary-500) 100%);
+}
+
+.lets_connect_hero_section .connect_background .gradient_5 {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, var(--black-950) 0%, var(--black-950) 55%, var(--primary-500) 100%);
+}
+
+.lets_connect_hero_section .connect_background .gradient_6 {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, var(--black-950) 0%, var(--black-950) 60%, var(--primary-500) 100%);
+}
+
+.lets_connect_hero_section .connect_background .gradient_7 {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, var(--black-950) 0%, var(--black-950) 65%, var(--primary-500) 100%);
+}
+
+.lets_connect_hero_section .connect_background .gradient_8 {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, var(--black-950) 0%, var(--black-950) 70%, var(--primary-500) 100%);
+}
+
+.lets_connect_hero_section .connect_background .gradient_1,
+.lets_connect_hero_section .connect_background .gradient_2,
+.lets_connect_hero_section .connect_background .gradient_3,
+.lets_connect_hero_section .connect_background .gradient_4,
+.lets_connect_hero_section .connect_background .gradient_5,
+.lets_connect_hero_section .connect_background .gradient_6,
+.lets_connect_hero_section .connect_background .gradient_7,
+.lets_connect_hero_section .connect_background .gradient_8 {
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    opacity: 0;
+    animation: slideInFromBottom 1s ease-out forwards;
+}
+
+.lets_connect_hero_section .connect_background .gradient_1 {
+    animation-delay: 0.7s;
+}
+
+.lets_connect_hero_section .connect_background .gradient_2 {
+    animation-delay: 0.75s;
+}
+
+.lets_connect_hero_section .connect_background .gradient_3 {
+    animation-delay: 0.8s;
+}
+
+.lets_connect_hero_section .connect_background .gradient_4 {
+    animation-delay: 0.85s;
+}
+
+.lets_connect_hero_section .connect_background .gradient_5 {
+    animation-delay: 0.9s;
+}
+
+.lets_connect_hero_section .connect_background .gradient_6 {
+    animation-delay: 0.95s;
+}
+
+.lets_connect_hero_section .connect_background .gradient_7 {
+    animation-delay: 1s;
+}
+
+.lets_connect_hero_section .connect_background .gradient_8 {
+    animation-delay: 1.05s;
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(50%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.lets_connect_hero_section .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/*#endregion */
+
+
+
 
 /*#region RESPONSIVE  */
 @media (max-width: 1440px) {
@@ -2257,6 +2391,14 @@ footer .greetings {
 
     /*#endregion  */
 
+    /*#region LET'S CONNECT > HERO SECTION */
+    .lets_connect_hero_section .connect_background .gradient_1,
+    .lets_connect_hero_section .connect_background .gradient_2,
+    .lets_connect_hero_section .connect_background .gradient_3 {
+        display: none;
+    }
+
+    /*#endregion */
 
 }
 
@@ -2545,6 +2687,14 @@ footer .greetings {
     }
 
     /*#endregion  */
+
+    /*#region LET'S CONNECT > HERO SECTION */
+    .lets_connect_hero_section .connect_background .gradient_4 {
+        display: none;
+    }
+
+    /*#endregion */
+
 }
 
 /*#endregion */

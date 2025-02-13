@@ -1,3 +1,21 @@
+// Navbar Toggle
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.getElementById("menu_toggle");
+  const navMenu = document.querySelector(".nav_menu");
+
+  menuToggle.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default anchor behavior
+    navMenu.classList.toggle("active"); // Toggle class
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", function (event) {
+    if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+      navMenu.classList.remove("active");
+    }
+  });
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   const achievementItems = document.querySelectorAll(".achievement_item");
 
