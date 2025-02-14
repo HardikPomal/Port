@@ -207,3 +207,50 @@ document.addEventListener("DOMContentLoaded", function () {
     switchTab(tabButtons[0]);
   }
 });
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   const selectWrapper = document.querySelector(".custom-select");
+//   const select = document.querySelector(".custom-select select");
+
+//   select.addEventListener("click", function () {
+//     selectWrapper.classList.toggle("open");
+
+//   });
+
+//   select.addEventListener("blur", function () {
+//     setTimeout(() => selectWrapper.classList.remove("open"), 200);
+//   });
+// });
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   const customSelect = document.getElementById("customSelect");
+//   const chevronIcon = document.getElementById("chevronIcon");
+//   const dropdown = document.getElementById("dropdown");
+//   customSelect.addEventListener("click", function () {
+//     chevronIcon.classList.toggle("rotate");
+//   });
+//   // Close when clicking outside
+//   document.addEventListener("click", function (event) {
+//     if (!customSelect.contains(event.target)) {
+//       chevronIcon.classList.remove("rotate");
+//     }
+//   });
+// });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const customSelect = document.querySelector(".custom-select");
+  const chevronIcon = document.querySelector(".chevron_icon");
+  if (customSelect && chevronIcon) {
+    // Check if elements exist
+    customSelect.addEventListener("click", function () {
+      chevronIcon.classList.toggle("rotate");
+    });
+    document.addEventListener("click", function (event) {
+      if (!customSelect.contains(event.target)) {
+        chevronIcon.classList.remove("rotate");
+      }
+    });
+  } else {
+    console.error("Elements not found in DOM.");
+  }
+});

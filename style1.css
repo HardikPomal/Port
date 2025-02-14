@@ -232,15 +232,6 @@ p {
     fill: var(--black-50) !important;
 }
 
-.icon_button {
-    min-width: 40px;
-    max-width: 40px;
-    width: 40px;
-    height: 40px;
-    min-height: 40px;
-    max-height: 40px;
-}
-
 .main_button:hover {
     background-color: var(--black-500);
 }
@@ -253,6 +244,47 @@ p {
 .main_button:disabled {
     background-color: var(--black-200);
     color: var(--black-300);
+}
+
+.submit_button {
+    padding: 9px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 10px;
+    background-color: var(--primary-400);
+    color: var(--black-950);
+    height: 40px;
+    max-height: 40px;
+    transition: background-color 0.9s ease, transform 0.2s ease;
+}
+
+.submit_button img,
+.submit_button svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--black-950) !important;
+}
+
+.submit_button:hover {
+    background-color: var(--primary-600);
+    color: var(--black-50);
+}
+
+.submit_button:hover img,
+.submit_button:hover svg {
+    fill: var(--black-50) !important;
+}
+
+.submit_button:focus {
+    background-color: var(--primary-900);
+    color: var(--black-50);
+}
+
+.submit_button:disabled {
+    background-color: var(--primary-300);
+    color: var(--black-50);
 }
 
 .light_button {
@@ -275,6 +307,15 @@ p {
     width: 20px;
     height: 20px;
     fill: var(--black-950) !important;
+}
+
+.icon_button {
+    min-width: 40px;
+    max-width: 40px;
+    width: 40px;
+    height: 40px;
+    min-height: 40px;
+    max-height: 40px;
 }
 
 .icon_button_rotate_left {
@@ -1618,7 +1659,7 @@ footer .greetings {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background 0.3s;
+    transition: color 0.3s;
 }
 
 .accordion-header:hover {
@@ -2055,6 +2096,89 @@ footer .greetings {
     width: fit-content;
     margin-left: auto;
 }
+
+.contact_form .lets_connect .form_content form select option {
+    background-color: var(--black-800) !important;
+    color: var(--black-50) !important;
+}
+
+.contact_form .lets_connect .form_content form select option:hover {
+    background-color: var(--primary-500) !important;
+    color: var(--black-50) !important;
+}
+
+.contact_form .lets_connect .form_content form select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: var(--black-800);
+    color: var(--black-300);
+    border-radius: 10px;
+    border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+.custom-select {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.custom-select select {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--black-800);
+    color: var(--black-300);
+    border-radius: 10px;
+    border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+/* Chevron Icon */
+.custom-select .chevron_icon {
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease-in-out;
+
+}
+
+/* Rotate Chevron when Dropdown is Open */
+.custom-select.open .chevron_icon {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.chevron_icon {
+    transition: transform 0.3s ease-in-out;
+}
+
+.chevron_icon.rotate {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .contact_form .form_background .gradient_1 {
     width: 100%;
