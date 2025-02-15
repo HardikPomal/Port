@@ -212,6 +212,7 @@ p {
 }
 
 .main_button {
+    width: fit-content;
     padding: 9px 8px;
     display: flex;
     align-items: center;
@@ -487,6 +488,9 @@ footer .greetings {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom-left-radius: 180px;
+    border-bottom-right-radius: 180px;
+    overflow: hidden;
 }
 
 .banner_main_container .container {
@@ -2025,6 +2029,8 @@ footer .greetings {
     }
 }
 
+/*#endregion */
+
 /*#region LET'S CONNECT > CONTACT FORM SECTION */
 .contact_form,
 .contact_form .form_background {
@@ -2287,6 +2293,14 @@ footer .greetings {
 
     /*#endregion  */
 
+    /*#region HOMEPAGE > HERO SECTION */
+    .banner_main_container {
+        border-bottom-left-radius: 130px;
+        border-bottom-right-radius: 130px;
+    }
+
+    /*#endregion */
+
     /*#region HOMEPAGE > ACHIEVEMENT SECTION  */
     .achievement_section .achievement_content {
         flex-direction: column;
@@ -2381,6 +2395,14 @@ footer .greetings {
     /*#region HEADER SECTION */
     header {
         max-width: 844px;
+    }
+
+    /*#endregion */
+
+    /*#region HOMEPAGE > HERO SECTION */
+    .banner_main_container {
+        border-bottom-left-radius: 100px;
+        border-bottom-right-radius: 100px;
     }
 
     /*#endregion */
@@ -2547,6 +2569,14 @@ footer .greetings {
     }
 
     /*#endregion  */
+
+    /*#region HOMEPAGE > HERO SECTION */
+    .banner_main_container {
+        border-bottom-left-radius: 80px;
+        border-bottom-right-radius: 80px;
+    }
+
+    /*#endregion */
 
     /*#region HOMEPAGE > ABOUT ME SECTION */
     .about_section .about_me {
