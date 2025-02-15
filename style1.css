@@ -595,8 +595,7 @@ footer .greetings {
     padding: 20px;
     border: 2px dashed var(--primary-600);
     border-radius: 250px;
-    opacity: 0;
-    visibility: hidden;
+    opacity: 0;  /* Keep opacity 0 to hide initially */
     transform: scale(0.8);
 }
 
@@ -616,6 +615,16 @@ footer .greetings {
         transform: scale(1);
     }
 }
+
+.achievement_item {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.achievement_item.animate {
+    animation: popout 1s ease-in-out forwards;
+}
+
 
 /*#endregion */
 
