@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Menu</title>
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        /* Full-page overlay */
+        .mobile_menu_overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: #0a0a0a; /* black-950 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transform: translateY(-100%);
+            transition: transform 0.5s ease-in-out;
+            z-index: 9999;
+        }
+
+        /* Show menu */
+        .mobile_menu_overlay.show {
+            transform: translateY(0);
+        }
+
+        /* Navigation styles */
+        .mobile_menu_nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .mobile_menu_nav ul li {
+            margin: 20px 0;
+        }
+
+        .mobile_menu_nav ul li a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: #fafafa; /* black-50 */
+            font-size: 24px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .mobile_menu_nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        /* Close button */
+        .mobile_menu_close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 36px;
+            color: #fafafa; /* black-50 */
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .mobile_menu_close:hover {
+            transform: rotate(90deg);
+        }
+
+        /* SVG Icons */
+        .menu_icon {
+            width: 24px;
+            height: 24px;
+            fill: #fafafa; /* black-50 */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Full-Screen Mobile Menu -->
+    <div class="mobile_menu_overlay">
+        <button class="mobile_menu_close">&times;</button>
+        <nav class="mobile_menu_nav">
+            <ul>
+                <li><a href="/" class="main_button">
+                    <svg class="menu_icon" viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18" /></svg>
+                    Home
+                </a></li>
+                <li><a href="about.html" class="main_button">
+                    <svg class="menu_icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 1-7.07 17.07A10 10 0 0 1 12 2m0 4a6 6 0 0 0-6 6h6m0 0a6 6 0 0 0 6 6m-6-6v6" /></svg>
+                    About Me
+                </a></li>
+                <li><a href="mywork.html" class="main_button">
+                    <svg class="menu_icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5v14" /></svg>
+                    My Work
+                </a></li>
+                <li><a href="letsconnect.html" class="main_button">
+                    <svg class="menu_icon" viewBox="0 0 24 24"><path d="M22 12h-4m-4 0H2m14-5l5 5-5 5" /></svg>
+                    Let's Connect
+                </a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuOverlay = document.querySelector(".mobile_menu_overlay");
+            const closeButton = document.querySelector(".mobile_menu_close");
+
+            // Open the menu when the page loads with "#mobile-menu" in URL
+            if (window.location.hash === "#mobile-menu") {
+                menuOverlay.classList.add("show");
+            }
+
+            // Close the menu when clicking the close button
+            closeButton.addEventListener("click", () => {
+                menuOverlay.classList.remove("show");
+                history.pushState("", document.title, window.location.pathname);
+            });
+        });
+    </script>
+
+</body>
+</html>

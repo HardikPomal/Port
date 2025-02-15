@@ -235,6 +235,7 @@ p {
 
 .main_button:hover {
     background-color: var(--black-500);
+    cursor: pointer;
 }
 
 .main_button:focus {
@@ -401,7 +402,140 @@ header nav ul .mobile_menu {
     display: none;
 }
 
+/* Dropdown Styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdown_menu {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    background: var(--primary-400);
+    /* border: 1px solid var(--primary-600); */
+    border-radius: 15px;
+    list-style: none;
+    padding: 10px;
+    min-width: 200px;
+    display: none; /* Hidden by default */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown_menu li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    display: block;
+    padding: 10px;
+}
+
+.dropdown_menu li a:hover {
+    background: var(--primary-600);
+    color: var(--black-50);
+    border-radius: 10px;
+}
+
+/* Show dropdown when active */
+.dropdown.active .dropdown_menu {
+    display: block;
+}
+
+/* Dropdown Icon */
+.dropdown_icon {
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+/* Rotate icon when dropdown is active */
+.dropdown.active .dropdown_icon {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Default icon state */
+.dropdown_icon {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+
 /*#endregion  */
+
+/*#region MOBILE MENU */
+/* Full-page overlay */
+.mobile_menu_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--black-950); /* black-950 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Initially hidden */
+    transition: opacity 0.5s ease-in-out, visibility 0s 0.5s; /* Fade-in and visibility control */
+    z-index: 9999;
+}
+
+/* Show menu */
+.mobile_menu_overlay.show {
+    opacity: 1; /* Fade in */
+    visibility: visible; /* Make visible */
+    transition: opacity 0.5s ease-in-out, visibility 0s 0s; /* Instant visibility change */
+}
+
+/* Navigation styles */
+.mobile_menu_nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    /* opacity: 0; Initially hidden */
+    transition: opacity 0.5s ease-in-out; /* Fade-in transition */
+}
+
+.mobile_menu_nav ul li {
+    margin: 20px 0;
+    transform: translateY(20px); /* Start position below the original position */
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Wipe-in effect from bottom */
+}
+
+/* Show nav items one by one */
+.mobile_menu_overlay.show .mobile_menu_nav ul li {
+    opacity: 1; /* Make the list items visible */
+    transform: translateY(0); /* Move to final position */
+}
+
+/* Close button */
+.mobile_menu_close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 36px;
+    color: var(--black-50); /* black-50 */
+    cursor: pointer;
+    z-index: 10000; /* Make sure the close button is on top */
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobile_menu_close:hover {
+    transform: rotate(90deg);
+}
+
+/* SVG Icons */
+.menu_icon {
+    width: 24px;
+    height: 24px;
+    fill: #fafafa; /* black-50 */
+}
+
+
+
+/*#endregion */
 
 /*#region FOOTER SECTION */
 footer {
