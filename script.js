@@ -16,6 +16,17 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+//Favicon
+function updateFavicon() {
+  const favicon = document.getElementById('favicon');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  favicon.href = prefersDark ? 'favicon-dark.png' : 'favicon-light.png';
+}
+
+updateFavicon(); // Set favicon on page load
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const achievementItems = document.querySelectorAll(".achievement_item");
 
