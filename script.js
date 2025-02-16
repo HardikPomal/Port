@@ -1,21 +1,13 @@
-// Splash Screen
-if (!localStorage.getItem("seenSplash")) {
-  localStorage.setItem("targetPage", window.location.pathname);
+localStorage.clear();
 
-  if (window.location.pathname !== "/loading.html") {
-    window.location.href = "loading.html"; // Redirect to loading page
-  }
-} else {
-  const targetPage = localStorage.getItem("targetPage");
+//Splash Screen
+const splash = document.querySelector ('#splash_screen_loading');
+document.addEventListener('DOMContentLoaded', (e)=>{
+ setTimeout(()=>{
+    splash.classList.add('display-none');
+ }, 5000);
+})
 
-  if (
-    targetPage &&
-    window.location.pathname !== targetPage &&
-    window.location.pathname !== "/loading.html"
-  ) {
-    window.location.href = targetPage;
-  }
-}
 
 document.addEventListener("DOMContentLoaded", () => {
   const menuOverlay = document.querySelector(".mobile_menu_overlay");
