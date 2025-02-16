@@ -2276,35 +2276,35 @@ footer .greetings {
 }
 
 .lets_connect_hero_section .connect_background .gradient_1 {
-    animation-delay: 0.1s;
+    animation-delay: 4.1s;
 }
 
 .lets_connect_hero_section .connect_background .gradient_2 {
-    animation-delay: 0.15s;
+    animation-delay: 4.15s;
 }
 
 .lets_connect_hero_section .connect_background .gradient_3 {
-    animation-delay: 0.2s;
+    animation-delay: 4.2s;
 }
 
 .lets_connect_hero_section .connect_background .gradient_4 {
-    animation-delay: 0.25s;
+    animation-delay: 4.25s;
 }
 
 .lets_connect_hero_section .connect_background .gradient_5 {
-    animation-delay: 0.3s;
+    animation-delay: 4.3s;
 }
 
 .lets_connect_hero_section .connect_background .gradient_6 {
-    animation-delay: 0.35s;
+    animation-delay: 4.35s;
 }
 
 .lets_connect_hero_section .connect_background .gradient_7 {
-    animation-delay: 0.4s;
+    animation-delay: 4.4s;
 }
 
 .lets_connect_hero_section .connect_background .gradient_8 {
-    animation-delay: 0.45s;
+    animation-delay: 4.45s;
 }
 
 @keyframes slideInFromBottom {
@@ -2324,6 +2324,8 @@ footer .greetings {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    max-width: 1600px;
+    width: 100%;
 }
 
 .lets_connect_hero_section .content .title {
@@ -2479,19 +2481,16 @@ footer .greetings {
     cursor: pointer;
 }
 
-/* Chevron Icon */
 .custom-select .chevron_icon {
     position: absolute;
-    top: 30px;
+    top: 32px;
     right: 10px;
     width: 20px;
     height: 20px;
     transform: translateY(-50%);
     transition: transform 0.3s ease-in-out;
-
 }
 
-/* Rotate Chevron when Dropdown is Open */
 .custom-select.open .chevron_icon {
     transform: translateY(-50%) rotate(180deg);
 }
@@ -2503,20 +2502,6 @@ footer .greetings {
 .chevron_icon.rotate {
     transform: translateY(-50%) rotate(180deg);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .contact_form .form_background .gradient_1 {
     width: 100%;
@@ -2673,7 +2658,21 @@ footer .greetings {
         border-bottom-left-radius: 130px;
     }
 
+    .lets_connect_hero_section .content{
+        max-width: 1180px;
+        width: 100%;
+    }
+
     /*#endregion */
+
+    /*#region LET'S CONNECT > CONTACT FORM SECTION */
+    .contact_form, .contact_form .form_background{
+        border-top-left-radius: 130px;
+        border-top-right-radius: 130px;
+    }
+
+    /*#endregion */
+
 }
 
 
@@ -2813,7 +2812,21 @@ footer .greetings {
         border-bottom-left-radius: 100px;
     }
 
+    .lets_connect_hero_section .content{
+        max-width: 844px;
+        width: 100%;
+    }
+
     /*#endregion */
+
+    /*#region LET'S CONNECT > CONTACT FORM SECTION */
+    .contact_form, .contact_form .form_background{
+        border-top-left-radius: 100px;
+        border-top-right-radius: 100px;
+    }
+
+    /*#endregion */
+
 }
 
 
@@ -3063,6 +3076,17 @@ footer .greetings {
     /*#endregion  */
 
     /*#region LET'S CONNECT > HERO SECTION */
+    .lets_connect_hero_section .content{
+        max-width: 720px;
+        width: 100%;
+        padding: 0px 24px;
+    }
+
+    .lets_connect_hero_section {
+        border-bottom-right-radius: 80px;
+        border-bottom-left-radius: 80px;
+    }
+        
     .lets_connect_hero_section .connect_background .gradient_1,
     .lets_connect_hero_section .connect_background .gradient_2,
     .lets_connect_hero_section .connect_background .gradient_3 {
@@ -3070,31 +3094,37 @@ footer .greetings {
     }
 
     .lets_connect_hero_section .connect_background .gradient_4 {
-        animation-delay: 0.1s;
+        animation-delay: 4.1s;
     }
 
     .lets_connect_hero_section .connect_background .gradient_5 {
-        animation-delay: 0.15s;
+        animation-delay: 4.15s;
     }
 
     .lets_connect_hero_section .connect_background .gradient_6 {
-        animation-delay: 0.2s;
+        animation-delay: 4.2s;
     }
 
     .lets_connect_hero_section .connect_background .gradient_7 {
-        animation-delay: 0.25s;
+        animation-delay: 4.25s;
     }
 
     .lets_connect_hero_section .connect_background .gradient_8 {
-        animation-delay: 0.3s;
+        animation-delay: 4.3s;
     }
 
     /*#endregion */
 
-    /*#region LET'S CONNECT > HERO SECTION */
-    .lets_connect_hero_section {
-        border-bottom-right-radius: 80px;
-        border-bottom-left-radius: 80px;
+    /*#region LET'S CONNECT > CONTACT FORM SECTION */
+    .contact_form, .contact_form .form_background{
+        border-top-left-radius: 80px;
+        border-top-right-radius: 80px;
+    }
+
+    .contact_form .form_background .gradient_1, 
+    .contact_form .form_background .gradient_2,
+    .contact_form .form_background .gradient_3{
+        display: none;
     }
 
     /*#endregion */
@@ -3274,6 +3304,20 @@ footer .greetings {
 
     /*#endregion  */
 
+    /*#region LET'S CONNECT > HERO SECTION */
+    .lets_connect_hero_section .content{
+        max-width: 380px;
+        width: 100%;
+    }
+    /*#endregion */
+
+    /*#region LET'S CONNECT > CONTACT FORM SECTION */
+    .contact_form .lets_connect form{
+        border-radius: 40px;
+        gap: 30px;
+        padding: 30px;
+    }
+    /*#endregion */
 }
 
 
@@ -3331,6 +3375,13 @@ footer .greetings {
     }
 
     /*#endregion  */
+
+    /*#region LET'S CONNECT > HERO SECTION */
+    .lets_connect_hero_section .content{
+        max-width: 335px;
+        width: 100%;
+    }
+    /*#endregion */
 
 }
 
@@ -3393,27 +3444,44 @@ footer .greetings {
 
     /*#endregion  */
 
-    /*#region LET'S CONNECT > HERO SECTION */
+    /*#region LET'S CONNECT > HERO SECTION */   
+    .lets_connect_hero_section .content{
+        max-width: 320px;
+        width: 100%;
+    }    
+
     .lets_connect_hero_section .connect_background .gradient_4 {
         display: none;
     }
 
     .lets_connect_hero_section .connect_background .gradient_5 {
-        animation-delay: 0.1s;
+        animation-delay: 4.1s;
     }
 
     .lets_connect_hero_section .connect_background .gradient_6 {
-        animation-delay: 0.15s;
+        animation-delay: 4.15s;
     }
 
     .lets_connect_hero_section .connect_background .gradient_7 {
-        animation-delay: 0.2s;
+        animation-delay: 4.2s;
     }
 
     .lets_connect_hero_section .connect_background .gradient_8 {
-        animation-delay: 0.25s;
+        animation-delay: 4.25s;
     }
 
+    /*#endregion */
+
+    /*#region LET'S CONNECT > CONTACT FORM SECTION */
+    .contact_form .lets_connect form{
+        border-radius: 30px;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .contact_form .form_background .gradient_4{
+        display: none;
+    }
     /*#endregion */
 
 }

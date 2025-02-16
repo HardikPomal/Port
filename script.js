@@ -5,7 +5,7 @@ const splash = document.querySelector ('#splash_screen_loading');
 document.addEventListener('DOMContentLoaded', (e)=>{
  setTimeout(()=>{
     splash.classList.add('display-none');
- }, 5000);
+ }, 4000);
 })
 
 
