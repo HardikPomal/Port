@@ -1,3 +1,22 @@
+// Splash Screen
+if (!localStorage.getItem("seenSplash")) {
+  localStorage.setItem("targetPage", window.location.pathname);
+
+  if (window.location.pathname !== "/loading.html") {
+    window.location.href = "loading.html"; // Redirect to loading page
+  }
+} else {
+  const targetPage = localStorage.getItem("targetPage");
+
+  if (
+    targetPage &&
+    window.location.pathname !== targetPage &&
+    window.location.pathname !== "/loading.html"
+  ) {
+    window.location.href = targetPage;
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const menuOverlay = document.querySelector(".mobile_menu_overlay");
   const menuToggle = document.querySelector("#menu_toggle");
@@ -6,29 +25,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Open menu
   menuToggle.addEventListener("click", () => {
-      menuOverlay.classList.add("show");
+    menuOverlay.classList.add("show");
 
-      // Animate nav links (wipe-in from bottom)
-      navLinks.forEach((link, index) => {
-          setTimeout(() => {
-              link.style.opacity = 1; // Fade-in
-              link.style.transform = "translateY(0)"; // Move to final position
-          }, index * 100); // Delay each link by 100ms
-      });
+    // Animate nav links (wipe-in from bottom)
+    navLinks.forEach((link, index) => {
+      setTimeout(() => {
+        link.style.opacity = 1; // Fade-in
+        link.style.transform = "translateY(0)"; // Move to final position
+      }, index * 100); // Delay each link by 100ms
+    });
   });
 
   // Close menu
   closeButton.addEventListener("click", () => {
-      menuOverlay.classList.remove("show");
+    menuOverlay.classList.remove("show");
 
-      // Reset nav links to original state
-      navLinks.forEach(link => {
-          link.style.opacity = 0; // Fade-out
-          link.style.transform = "translateY(20px)"; // Move down
-      });
+    // Reset nav links to original state
+    navLinks.forEach((link) => {
+      link.style.opacity = 0; // Fade-out
+      link.style.transform = "translateY(20px)"; // Move down
+    });
   });
 });
-
 
 // Navbar Toggle
 document.addEventListener("DOMContentLoaded", function () {
@@ -54,32 +72,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const dropdown = document.querySelector(".dropdown");
 
   dropdownToggle.addEventListener("click", (event) => {
-      event.preventDefault(); // Prevents the link from navigating
-      dropdown.classList.toggle("active");
+    event.preventDefault(); // Prevents the link from navigating
+    dropdown.classList.toggle("active");
   });
 
   // Close dropdown when clicking outside
   document.addEventListener("click", (event) => {
-      if (!dropdown.contains(event.target)) {
-          dropdown.classList.remove("active");
-      }
+    if (!dropdown.contains(event.target)) {
+      dropdown.classList.remove("active");
+    }
   });
 });
 
-
 document.addEventListener("DOMContentLoaded", () => {
-  
   function updateFavicon() {
-    const favicon = document.getElementById("favicon");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    favicon.href = prefersDark ? "favicon-dark.png" : "favicon-light.png";
+    const favicon = document.querySelector('link[rel="icon"]'); // Select the favicon link tag
+    if (favicon) {
+      favicon.href = "path_to_new_favicon.ico"; // Change the favicon's href if it exists
+    } else {
+      console.log("Favicon element not found.");
+    }
   }
-
-  updateFavicon(); // Set favicon on page load
-  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateFavicon);
-
 });
-
 
 document.addEventListener("DOMContentLoaded", () => {
   const achievementItems = document.querySelectorAll(".achievement_item");
