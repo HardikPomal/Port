@@ -149,6 +149,7 @@ ul li {
 
 a {
     text-decoration: none;
+    color: var(--black-50);
 }
 
 h1 {
@@ -462,63 +463,142 @@ header nav ul .mobile_menu {
 /*#endregion  */
 
 /*#region MOBILE MENU */
-/* Full-page overlay */
 .mobile_menu_overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background: var(--black-950); /* black-950 */
+    background: var(--black-950);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    opacity: 0; /* Initially hidden */
-    visibility: hidden; /* Initially hidden */
-    transition: opacity 0.5s ease-in-out, visibility 0s 0.5s; /* Fade-in and visibility control */
+    opacity: 0; 
+    visibility: hidden; 
+    transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
     z-index: 9999;
+    padding: 30px 0px;
 }
 
-/* Show menu */
+.mobile_menu_overlay .say_hello {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: var(--primary-400);
+    width: 100%;
+    padding: 20px;
+}
+
+.mobile_menu_overlay .say_hello a .mail_id{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mobile_menu_overlay .say_hello a .mail_id svg{
+    width: 24px;
+    height: 24px;
+}
+
 .mobile_menu_overlay.show {
-    opacity: 1; /* Fade in */
-    visibility: visible; /* Make visible */
-    transition: opacity 0.5s ease-in-out, visibility 0s 0s; /* Instant visibility change */
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-in-out, visibility 0s 0s;
 }
 
-/* Navigation styles */
-.mobile_menu_nav ul {
+.mobile_menu_nav{
+    width: 100%;
+    padding: 20px;
+}
+
+.mobile_menu_nav .main_menu .main_menu_item .sub_menu {
+    padding: 20px;
+    background-color: var(--black-900);
+    margin-left: 40px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.mobile_menu_nav .main_menu .main_menu_item .sub_menu::before {
+    content: "";
+    position: absolute;
+    left: -22px; 
+    top: 0;
+    bottom: 0;
+    width: 1px; 
+    background-color: var(--primary-400);
+    border-radius: 0 20px 20px 0;
+}
+
+.mobile_menu_nav .main_menu .main_menu_item .sub_menu .sub_menu_item {
+    text-align: left;
+    border: none !important;
+    padding: 10px;
+}
+
+.mobile_menu_nav .main_menu .main_menu_item .sub_menu .sub_menu_item {
+    text-align: left;
+    border: none !important;
+    padding: 10px;
+}
+
+.mobile_menu_nav .main_menu {
     list-style: none;
     padding: 0;
     text-align: center;
-    /* opacity: 0; Initially hidden */
-    transition: opacity 0.5s ease-in-out; /* Fade-in transition */
+    transition: opacity 0.5s ease-in-out;
 }
 
-.mobile_menu_nav ul li {
-    margin: 20px 0;
-    transform: translateY(20px); /* Start position below the original position */
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Wipe-in effect from bottom */
+.mobile_menu_nav .main_menu .main_menu_item {
+    padding: 10px 0;
+    transform: translateY(20px); 
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    position: relative; 
 }
 
-/* Show nav items one by one */
-.mobile_menu_overlay.show .mobile_menu_nav ul li {
-    opacity: 1; /* Make the list items visible */
-    transform: translateY(0); /* Move to final position */
+.mobile_menu_nav .main_menu .main_menu_item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background: var(--primary-400);
+    width: 0; 
+    transition: width 1s ease-in-out;
 }
 
-/* Close button */
+.mobile_menu_nav .main_menu .main_menu_item a {
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.mobile_menu_overlay.show .mobile_menu_nav .main_menu .main_menu_item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile_menu_overlay.show .mobile_menu_nav .main_menu .main_menu_item::after {
+    width: 100%; 
+}
+
+
+.mobile_menu_overlay.show .mobile_menu_nav .main_menu .main_menu_item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .mobile_menu_close {
     position: absolute;
     top: 20px;
     right: 20px;
-    background: none;
+    background: var(--primary-400);
+    border-radius: 40px;
     border: none;
     font-size: 36px;
-    color: var(--black-50); /* black-50 */
+    color: var(--black-950);
     cursor: pointer;
-    z-index: 10000; /* Make sure the close button is on top */
+    z-index: 10000;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -526,15 +606,11 @@ header nav ul .mobile_menu {
     transform: rotate(90deg);
 }
 
-/* SVG Icons */
 .menu_icon {
     width: 24px;
     height: 24px;
-    fill: #fafafa; /* black-50 */
+    fill: var(--black-50);
 }
-
-
-
 /*#endregion */
 
 /*#region FOOTER SECTION */
