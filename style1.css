@@ -978,6 +978,7 @@ footer .greetings {
 .about_section .about_me .about_content .follow_me {
     display: grid;
     gap: 20px;
+    margin-top: 20px;
 }
 
 .about_section .about_me .about_content .follow_me .social_accounts {
