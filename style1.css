@@ -2153,7 +2153,6 @@ footer .greetings {
 
 }
 
-/* Rotate Chevron when Dropdown is Open */
 .custom-select.open .chevron_icon {
     transform: translateY(-50%) rotate(180deg);
 }
@@ -2165,20 +2164,6 @@ footer .greetings {
 .chevron_icon.rotate {
     transform: translateY(-50%) rotate(180deg);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .contact_form .form_background .gradient_1 {
     width: 100%;
@@ -2328,6 +2313,14 @@ footer .greetings {
     }
 
     /*#endregion */
+
+    /*#region LET'S CONENCT > CONTACT FORM */
+    .contact_form,
+    .contact_form .form_background {
+        overflow: hidden;
+        border-top-right-radius: 130px;
+        border-top-left-radius: 130px;
+    }
 }
 
 
