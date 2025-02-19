@@ -1,3 +1,45 @@
+localStorage.clear();
+
+//Splash Screen
+const splash = document.querySelector ('#splash_screen_loading');
+document.addEventListener('DOMContentLoaded', (e)=>{
+ setTimeout(()=>{
+    splash.classList.add('display-none');
+ }, 4000);
+})
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const menuOverlay = document.querySelector(".mobile_menu_overlay");
+  const menuToggle = document.querySelector("#menu_toggle");
+  const closeButton = document.querySelector(".mobile_menu_close");
+  const navLinks = document.querySelectorAll(".mobile_menu_nav ul li");
+
+  // Open menu
+  menuToggle.addEventListener("click", () => {
+    menuOverlay.classList.add("show");
+
+    // Animate nav links (wipe-in from bottom)
+    navLinks.forEach((link, index) => {
+      setTimeout(() => {
+        link.style.opacity = 1; // Fade-in
+        link.style.transform = "translateY(0)"; // Move to final position
+      }, index * 100); // Delay each link by 100ms
+    });
+  });
+
+  // Close menu
+  closeButton.addEventListener("click", () => {
+    menuOverlay.classList.remove("show");
+
+    // Reset nav links to original state
+    navLinks.forEach((link) => {
+      link.style.opacity = 0; // Fade-out
+      link.style.transform = "translateY(20px)"; // Move down
+    });
+  });
+});
+
 // Navbar Toggle
 document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.getElementById("menu_toggle");
@@ -14,6 +56,35 @@ document.addEventListener("DOMContentLoaded", function () {
       navMenu.classList.remove("active");
     }
   });
+});
+
+// Navbar My Work Dropdown
+document.addEventListener("DOMContentLoaded", () => {
+  const dropdownToggle = document.querySelector(".dropdown_toggle");
+  const dropdown = document.querySelector(".dropdown");
+
+  dropdownToggle.addEventListener("click", (event) => {
+    event.preventDefault(); // Prevents the link from navigating
+    dropdown.classList.toggle("active");
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", (event) => {
+    if (!dropdown.contains(event.target)) {
+      dropdown.classList.remove("active");
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  function updateFavicon() {
+    const favicon = document.querySelector('link[rel="icon"]'); // Select the favicon link tag
+    if (favicon) {
+      favicon.href = "path_to_new_favicon.ico"; // Change the favicon's href if it exists
+    } else {
+      console.log("Favicon element not found.");
+    }
+  }
 });
 
 document.addEventListener("DOMContentLoaded", () => {

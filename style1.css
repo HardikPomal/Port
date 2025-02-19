@@ -149,6 +149,7 @@ ul li {
 
 a {
     text-decoration: none;
+    color: var(--black-50);
 }
 
 h1 {
@@ -212,6 +213,7 @@ p {
 }
 
 .main_button {
+    width: fit-content;
     padding: 9px 8px;
     display: flex;
     align-items: center;
@@ -234,6 +236,7 @@ p {
 
 .main_button:hover {
     background-color: var(--black-500);
+    cursor: pointer;
 }
 
 .main_button:focus {
@@ -354,6 +357,87 @@ p {
 
 /*#endregion  */
 
+/*#region SPALSH SCREEN */
+#splash_screen_loading .svg-container {
+    width: 120px;
+    height: 120px;
+}
+
+#splash_screen_loading .svg-container svg {
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+}
+
+#splash_screen_loading .svg-container svg .animated-path {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    fill: none;
+    animation: draw 4s linear infinite, fadeInFill 4s ease-in infinite;
+}
+
+@keyframes draw {
+    0% {
+        stroke-dashoffset: 600;
+    }
+
+    50% {
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dashoffset: 600;
+    }
+}
+
+@keyframes fadeInFill {
+
+    0%,
+    100% {
+        fill: rgba(172, 143, 246, 0);
+    }
+
+    50% {
+        fill: rgba(172, 143, 246, 1);
+    }
+}
+
+.animated-path {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    fill: none;
+    animation: draw 4s linear infinite, fadeInFill 4s ease-in infinite;
+}
+
+#splash_screen_loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--black-950);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#splash_screen_loading.display-none {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--black-950);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -100;
+}
+
+/*#endregion */
+
 /*#region HEADER SECTION */
 header {
     max-width: 1100px;
@@ -400,7 +484,216 @@ header nav ul .mobile_menu {
     display: none;
 }
 
+/* Dropdown Styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdown_menu {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    background: var(--primary-400);
+    /* border: 1px solid var(--primary-600); */
+    border-radius: 15px;
+    list-style: none;
+    padding: 10px;
+    min-width: 200px;
+    display: none;
+    /* Hidden by default */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown_menu li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    display: block;
+    padding: 10px;
+}
+
+.dropdown_menu li a:hover {
+    background: var(--primary-600);
+    color: var(--black-50);
+    border-radius: 10px;
+}
+
+/* Show dropdown when active */
+.dropdown.active .dropdown_menu {
+    display: block;
+}
+
+/* Dropdown Icon */
+.dropdown_icon {
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+/* Rotate icon when dropdown is active */
+.dropdown.active .dropdown_icon {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Default icon state */
+.dropdown_icon {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+
 /*#endregion  */
+
+/*#region MOBILE MENU */
+.mobile_menu_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--black-950);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
+    z-index: 9999;
+}
+
+.mobile_menu_overlay .say_hello {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: var(--primary-400);
+    width: 100%;
+    padding: 20px;
+}
+
+.mobile_menu_overlay .say_hello a .mail_id {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mobile_menu_overlay .say_hello a .mail_id svg {
+    width: 24px;
+    height: 24px;
+}
+
+.mobile_menu_overlay.show {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-in-out, visibility 0s 0s;
+}
+
+.mobile_menu_nav {
+    width: 100%;
+    padding: 20px;
+}
+
+.mobile_menu_nav .main_menu .main_menu_item .sub_menu {
+    padding: 20px;
+    background-color: var(--black-900);
+    margin-left: 40px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.mobile_menu_nav .main_menu .main_menu_item .sub_menu::before {
+    content: "";
+    position: absolute;
+    left: -22px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: var(--primary-400);
+    border-radius: 0 20px 20px 0;
+}
+
+.mobile_menu_nav .main_menu .main_menu_item .sub_menu .sub_menu_item {
+    text-align: left;
+    border: none !important;
+    padding: 10px;
+}
+
+.mobile_menu_nav .main_menu .main_menu_item .sub_menu .sub_menu_item {
+    text-align: left;
+    border: none !important;
+    padding: 10px;
+}
+
+.mobile_menu_nav .main_menu {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.mobile_menu_nav .main_menu .main_menu_item {
+    padding: 10px 0;
+    transform: translateY(20px);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    position: relative;
+}
+
+.mobile_menu_nav .main_menu .main_menu_item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background: var(--primary-400);
+    width: 0;
+    transition: width 1s ease-in-out;
+}
+
+.mobile_menu_nav .main_menu .main_menu_item a {
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.mobile_menu_overlay.show .mobile_menu_nav .main_menu .main_menu_item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile_menu_overlay.show .mobile_menu_nav .main_menu .main_menu_item::after {
+    width: 100%;
+}
+
+
+.mobile_menu_overlay.show .mobile_menu_nav .main_menu .main_menu_item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile_menu_close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--primary-400);
+    border-radius: 40px;
+    border: none;
+    font-size: 36px;
+    color: var(--black-950);
+    cursor: pointer;
+    z-index: 10000;
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobile_menu_close:hover {
+    transform: rotate(90deg);
+}
+
+.menu_icon {
+    width: 24px;
+    height: 24px;
+    fill: var(--black-50);
+}
+
+/*#endregion */
 
 /*#region FOOTER SECTION */
 footer {
@@ -487,6 +780,9 @@ footer .greetings {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom-left-radius: 180px;
+    border-bottom-right-radius: 180px;
+    overflow: hidden;
 }
 
 .banner_main_container .container {
@@ -592,7 +888,7 @@ footer .greetings {
     border: 2px dashed var(--primary-600);
     border-radius: 250px;
     opacity: 0;
-    visibility: hidden;
+    /* Keep opacity 0 to hide initially */
     transform: scale(0.8);
 }
 
@@ -613,6 +909,16 @@ footer .greetings {
     }
 }
 
+.achievement_item {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.achievement_item.animate {
+    animation: popout 1s ease-in-out forwards;
+}
+
+
 /*#endregion */
 
 /*#region HOMEPAGE > ABOUT ME SECTION */
@@ -628,11 +934,51 @@ footer .greetings {
     gap: 20px;
 }
 
-.about_section .about_me img.person_name {
+.about_me .my_image_grid_animation {
+    position: relative;
+    width: 520px;
+    height: 520px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.about_me .my_image_grid_animation .grid {
+    position: absolute;
     width: 100%;
-    margin: 0 auto;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='520' height='520' viewBox='0 0 520 520' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M520 520L6.10352e-05 520L1.55753e-05 -1.55753e-05L520 -6.10352e-05L520 520ZM519.188 519.071L455.813 519.071L455.813 446.643L519.187 446.643L519.188 519.071ZM454.188 519.071L390.813 519.071L390.813 446.643L454.188 446.643L454.188 519.071ZM325.813 519.071L389.188 519.071L389.188 446.643L325.813 446.643L325.813 519.071ZM324.188 519.071L260.813 519.071L260.813 446.643L324.188 446.643L324.188 519.071ZM195.813 519.071L259.188 519.071L259.188 446.643L195.813 446.643L195.813 519.071ZM194.188 519.071L130.813 519.071L130.813 446.643L194.188 446.643L194.188 519.071ZM65.8126 519.071L129.188 519.071L129.188 446.643L65.8126 446.643L65.8126 519.071ZM64.1875 519.071L0.812561 519.071L0.812555 446.643L64.1875 446.643L64.1875 519.071ZM455.813 444.786L519.187 444.786L519.187 372.357L455.812 372.357L455.813 444.786ZM454.188 444.786L390.813 444.786L390.813 372.357L454.187 372.357L454.188 444.786ZM325.813 444.786L389.188 444.786L389.188 372.357L325.813 372.357L325.813 444.786ZM324.188 444.786L260.813 444.786L260.813 372.357L324.188 372.357L324.188 444.786ZM195.813 444.786L259.188 444.786L259.188 372.357L195.813 372.357L195.813 444.786ZM194.188 444.786L130.813 444.786L130.813 372.357L194.188 372.357L194.188 444.786ZM65.8126 444.786L129.188 444.786L129.188 372.357L65.8125 372.357L65.8126 444.786ZM64.1875 444.786L0.812554 444.786L0.812548 372.357L64.1875 372.357L64.1875 444.786ZM455.812 370.5L519.187 370.5L519.187 298.071L455.812 298.071L455.812 370.5ZM454.187 370.5L390.813 370.5L390.812 298.071L454.187 298.071L454.187 370.5ZM325.813 370.5L389.188 370.5L389.187 298.071L325.813 298.071L325.813 370.5ZM324.188 370.5L260.813 370.5L260.813 298.071L324.188 298.071L324.188 370.5ZM195.813 370.5L259.188 370.5L259.188 298.071L195.813 298.071L195.813 370.5ZM194.188 370.5L130.813 370.5L130.813 298.071L194.188 298.071L194.188 370.5ZM65.8125 370.5L129.188 370.5L129.188 298.071L65.8125 298.071L65.8125 370.5ZM64.1875 370.5L0.812548 370.5L0.812542 298.071L64.1875 298.071L64.1875 370.5ZM455.812 296.214L519.187 296.214L519.187 223.786L455.812 223.786L455.812 296.214ZM454.187 296.214L390.812 296.214L390.812 223.786L454.187 223.786L454.187 296.214ZM325.813 296.214L389.187 296.214L389.187 223.786L325.813 223.786L325.813 296.214ZM324.188 296.214L260.813 296.214L260.813 223.786L324.188 223.786L324.188 296.214ZM195.813 296.214L259.188 296.214L259.188 223.786L195.813 223.786L195.813 296.214ZM194.188 296.214L130.813 296.214L130.813 223.786L194.188 223.786L194.188 296.214ZM65.8125 296.214L129.188 296.214L129.188 223.786L65.8125 223.786L65.8125 296.214ZM64.1875 296.214L0.812541 296.214L0.812535 223.786L64.1875 223.786L64.1875 296.214ZM455.812 221.929L519.187 221.929L519.187 149.5L455.812 149.5L455.812 221.929ZM454.187 221.929L390.812 221.929L390.812 149.5L454.187 149.5L454.187 221.929ZM325.813 221.929L389.187 221.929L389.187 149.5L325.812 149.5L325.813 221.929ZM324.188 221.929L260.813 221.929L260.812 149.5L324.187 149.5L324.188 221.929ZM195.813 221.929L259.188 221.929L259.187 149.5L195.812 149.5L195.813 221.929ZM194.188 221.929L130.813 221.929L130.812 149.5L194.187 149.5L194.188 221.929ZM65.8125 221.929L129.188 221.929L129.187 149.5L65.8125 149.5L65.8125 221.929ZM64.1875 221.929L0.812535 221.929L0.812529 149.5L64.1875 149.5L64.1875 221.929ZM455.812 147.643L519.187 147.643L519.187 75.2142L455.812 75.2142L455.812 147.643ZM454.187 147.643L390.812 147.643L390.812 75.2142L454.187 75.2142L454.187 147.643ZM325.812 147.643L389.187 147.643L389.187 75.2142L325.812 75.2142L325.812 147.643ZM324.187 147.643L260.812 147.643L260.812 75.2142L324.187 75.2142L324.187 147.643ZM195.812 147.643L259.187 147.643L259.187 75.2142L195.812 75.2142L195.812 147.643ZM194.187 147.643L130.812 147.643L130.812 75.2142L194.187 75.2142L194.187 147.643ZM65.8125 147.643L129.187 147.643L129.187 75.2142L65.8125 75.2142L65.8125 147.643ZM64.1875 147.643L0.812528 147.643L0.812522 75.2142L64.1875 75.2142L64.1875 147.643ZM455.812 73.3571L519.187 73.3571L519.187 0.928528L455.812 0.928533L455.812 73.3571ZM454.187 73.3571L390.812 73.3571L390.812 0.928539L454.187 0.928534L454.187 73.3571ZM325.812 73.3571L389.187 73.3571L389.187 0.928539L325.812 0.928545L325.812 73.3571ZM324.187 73.3571L260.812 73.3571L260.812 0.92855L324.187 0.928545L324.187 73.3571ZM195.812 73.3571L259.187 73.3571L259.187 0.928551L195.812 0.928556L195.812 73.3571ZM194.187 73.3571L130.812 73.3571L130.812 0.928562L194.187 0.928556L194.187 73.3571ZM65.8125 73.3571L129.187 73.3571L129.187 0.928562L65.8125 0.928568L65.8125 73.3571ZM64.1875 73.3571L0.812522 73.3571L0.812516 0.928573L64.1875 0.928568L64.1875 73.3571Z' fill='%23F6F7F9'/%3E%3Crect width='185.714' height='520' fill='url(%23paint0_linear_749_5255)'/%3E%3Crect x='520' width='185.714' height='520' transform='rotate(90 520 0)' fill='url(%23paint1_linear_749_5255)'/%3E%3Crect width='185.714' height='520' transform='matrix(-4.37114e-08 -1 -1 4.37114e-08 520 520)' fill='url(%23paint2_linear_749_5255)'/%3E%3Crect width='185.714' height='520' transform='matrix(-1 0 0 1 520 0)' fill='url(%23paint3_linear_749_5255)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_749_5255' x1='185.714' y1='260' x2='-7.74011e-07' y2='260' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23212430' stop-opacity='0'/%3E%3Cstop offset='0.5' stop-color='%23212430' stop-opacity='0.8'/%3E%3Cstop offset='1' stop-color='%23212430'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear_749_5255' x1='705.714' y1='260' x2='520' y2='260' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23212430' stop-opacity='0'/%3E%3Cstop offset='0.5' stop-color='%23212430' stop-opacity='0.8'/%3E%3Cstop offset='1' stop-color='%23212430'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint2_linear_749_5255' x1='185.714' y1='260' x2='-7.74011e-07' y2='260' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23212430' stop-opacity='0'/%3E%3Cstop offset='0.5' stop-color='%23212430' stop-opacity='0.8'/%3E%3Cstop offset='1' stop-color='%23212430'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint3_linear_749_5255' x1='185.714' y1='260' x2='-7.74011e-07' y2='260' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23212430' stop-opacity='0'/%3E%3Cstop offset='0.5' stop-color='%23212430' stop-opacity='0.8'/%3E%3Cstop offset='1' stop-color='%23212430'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
+    animation: scaleGrid 1s infinite alternate ease-in-out;
+    background-position: center center;
+}
+
+@keyframes scaleGrid {
+    0% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.about_me .my_image_grid_animation .ellipse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-400);
+    filter: blur(100px);
+    border-radius: 50%;
+}
+
+.about_me .my_image_grid_animation .my_image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     object-fit: contain;
-    max-height: 750px;
 }
 
 .about_section .about_me .about_content {
@@ -647,6 +993,7 @@ footer .greetings {
 .about_section .about_me .about_content .follow_me {
     display: grid;
     gap: 20px;
+    margin-top: 20px;
 }
 
 .about_section .about_me .about_content .follow_me .social_accounts {
@@ -976,6 +1323,7 @@ footer .greetings {
     content: "";
     background-image: url(./assets/img/ficami-bg.jpeg);
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
     background-position: center center;
     mix-blend-mode: luminosity;
@@ -992,6 +1340,7 @@ footer .greetings {
     content: "";
     background-image: url(./assets/img/salus-bg.jpg);
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
     background-position: center center;
     mix-blend-mode: luminosity;
@@ -1007,6 +1356,7 @@ footer .greetings {
     z-index: 1;
     content: "";
     background-image: url(./assets/img/gnostic-bg.jpg);
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -1025,6 +1375,7 @@ footer .greetings {
     background-image: url(./assets/img/learner-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     background-position: center center;
     mix-blend-mode: luminosity;
     opacity: 0.25;
@@ -1041,6 +1392,7 @@ footer .greetings {
     background-image: url(./assets/img/medus-bg.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     background-position: center center;
     mix-blend-mode: luminosity;
     opacity: 0.25;
@@ -1940,35 +2292,35 @@ footer .greetings {
 }
 
 .lets_connect_hero_section .connect_background .gradient_1 {
-    animation-delay: 0.1s;
+    animation-delay: 4.1s;
 }
 
 .lets_connect_hero_section .connect_background .gradient_2 {
-    animation-delay: 0.15s;
+    animation-delay: 4.15s;
 }
 
 .lets_connect_hero_section .connect_background .gradient_3 {
-    animation-delay: 0.2s;
+    animation-delay: 4.2s;
 }
 
 .lets_connect_hero_section .connect_background .gradient_4 {
-    animation-delay: 0.25s;
+    animation-delay: 4.25s;
 }
 
 .lets_connect_hero_section .connect_background .gradient_5 {
-    animation-delay: 0.3s;
+    animation-delay: 4.3s;
 }
 
 .lets_connect_hero_section .connect_background .gradient_6 {
-    animation-delay: 0.35s;
+    animation-delay: 4.35s;
 }
 
 .lets_connect_hero_section .connect_background .gradient_7 {
-    animation-delay: 0.4s;
+    animation-delay: 4.4s;
 }
 
 .lets_connect_hero_section .connect_background .gradient_8 {
-    animation-delay: 0.45s;
+    animation-delay: 4.45s;
 }
 
 @keyframes slideInFromBottom {
@@ -1988,6 +2340,8 @@ footer .greetings {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    max-width: 1600px;
+    width: 100%;
 }
 
 .lets_connect_hero_section .content .title {
@@ -2024,6 +2378,8 @@ footer .greetings {
         transform: translateY(0);
     }
 }
+
+/*#endregion */
 
 /*#region LET'S CONNECT > CONTACT FORM SECTION */
 .contact_form,
@@ -2141,16 +2497,14 @@ footer .greetings {
     cursor: pointer;
 }
 
-/* Chevron Icon */
 .custom-select .chevron_icon {
     position: absolute;
-    top: 30px;
+    top: 32px;
     right: 10px;
     width: 20px;
     height: 20px;
     transform: translateY(-50%);
     transition: transform 0.3s ease-in-out;
-
 }
 
 .custom-select.open .chevron_icon {
@@ -2272,6 +2626,14 @@ footer .greetings {
 
     /*#endregion  */
 
+    /*#region HOMEPAGE > HERO SECTION */
+    .banner_main_container {
+        border-bottom-left-radius: 130px;
+        border-bottom-right-radius: 130px;
+    }
+
+    /*#endregion */
+
     /*#region HOMEPAGE > ACHIEVEMENT SECTION  */
     .achievement_section .achievement_content {
         flex-direction: column;
@@ -2312,15 +2674,12 @@ footer .greetings {
         border-bottom-left-radius: 130px;
     }
 
-    /*#endregion */
-
-    /*#region LET'S CONENCT > CONTACT FORM */
-    .contact_form,
-    .contact_form .form_background {
-        overflow: hidden;
-        border-top-right-radius: 130px;
-        border-top-left-radius: 130px;
+    .lets_connect_hero_section .content {
+        max-width: 1180px;
+        width: 100%;
     }
+
+    /*#endregion */
 }
 
 
@@ -2374,6 +2733,14 @@ footer .greetings {
     /*#region HEADER SECTION */
     header {
         max-width: 844px;
+    }
+
+    /*#endregion */
+
+    /*#region HOMEPAGE > HERO SECTION */
+    .banner_main_container {
+        border-bottom-left-radius: 100px;
+        border-bottom-right-radius: 100px;
     }
 
     /*#endregion */
@@ -2452,7 +2819,22 @@ footer .greetings {
         border-bottom-left-radius: 100px;
     }
 
+    .lets_connect_hero_section .content {
+        max-width: 844px;
+        width: 100%;
+    }
+
     /*#endregion */
+
+    /*#region LET'S CONNECT > CONTACT FORM SECTION */
+    .contact_form,
+    .contact_form .form_background {
+        border-top-left-radius: 100px;
+        border-top-right-radius: 100px;
+    }
+
+    /*#endregion */
+
 }
 
 
@@ -2541,6 +2923,14 @@ footer .greetings {
 
     /*#endregion  */
 
+    /*#region HOMEPAGE > HERO SECTION */
+    .banner_main_container {
+        border-bottom-left-radius: 80px;
+        border-bottom-right-radius: 80px;
+    }
+
+    /*#endregion */
+
     /*#region HOMEPAGE > ABOUT ME SECTION */
     .about_section .about_me {
         grid-template-columns: repeat(1, 1fr);
@@ -2548,6 +2938,16 @@ footer .greetings {
 
     .about_section img.person_name {
         max-height: 400px !important;
+    }
+
+
+    .about_me .my_image_grid_animation {
+        width: 380px;
+        height: 380px;
+    }
+
+    .about_me .my_image_grid_animation .my_image {
+        object-fit: cover;
     }
 
     /*#endregion  */
@@ -2684,6 +3084,17 @@ footer .greetings {
     /*#endregion  */
 
     /*#region LET'S CONNECT > HERO SECTION */
+    .lets_connect_hero_section .content {
+        max-width: 720px;
+        width: 100%;
+        padding: 0px 24px;
+    }
+
+    .lets_connect_hero_section {
+        border-bottom-right-radius: 80px;
+        border-bottom-left-radius: 80px;
+    }
+
     .lets_connect_hero_section .connect_background .gradient_1,
     .lets_connect_hero_section .connect_background .gradient_2,
     .lets_connect_hero_section .connect_background .gradient_3 {
@@ -2691,31 +3102,38 @@ footer .greetings {
     }
 
     .lets_connect_hero_section .connect_background .gradient_4 {
-        animation-delay: 0.1s;
+        animation-delay: 4.1s;
     }
 
     .lets_connect_hero_section .connect_background .gradient_5 {
-        animation-delay: 0.15s;
+        animation-delay: 4.15s;
     }
 
     .lets_connect_hero_section .connect_background .gradient_6 {
-        animation-delay: 0.2s;
+        animation-delay: 4.2s;
     }
 
     .lets_connect_hero_section .connect_background .gradient_7 {
-        animation-delay: 0.25s;
+        animation-delay: 4.25s;
     }
 
     .lets_connect_hero_section .connect_background .gradient_8 {
-        animation-delay: 0.3s;
+        animation-delay: 4.3s;
     }
 
     /*#endregion */
 
-    /*#region LET'S CONNECT > HERO SECTION */
-    .lets_connect_hero_section {
-        border-bottom-right-radius: 80px;
-        border-bottom-left-radius: 80px;
+    /*#region LET'S CONNECT > CONTACT FORM SECTION */
+    .contact_form,
+    .contact_form .form_background {
+        border-top-left-radius: 80px;
+        border-top-right-radius: 80px;
+    }
+
+    .contact_form .form_background .gradient_1,
+    .contact_form .form_background .gradient_2,
+    .contact_form .form_background .gradient_3 {
+        display: none;
     }
 
     /*#endregion */
@@ -2790,6 +3208,13 @@ footer .greetings {
     }
 
     /*#endregion  */
+
+    /*#region HOMEPAGE > ABOUT ME SECTION */
+    .about_me .my_image_grid_animation {
+        width: 100%;
+    }
+
+    /*#endregion */
 
     /*#region HOMEPAGE > MY WORK SECTION */
     .my_work .work_title {
@@ -2888,6 +3313,22 @@ footer .greetings {
 
     /*#endregion  */
 
+    /*#region LET'S CONNECT > HERO SECTION */
+    .lets_connect_hero_section .content {
+        max-width: 380px;
+        width: 100%;
+    }
+
+    /*#endregion */
+
+    /*#region LET'S CONNECT > CONTACT FORM SECTION */
+    .contact_form .lets_connect form {
+        border-radius: 40px;
+        gap: 30px;
+        padding: 30px;
+    }
+
+    /*#endregion */
 }
 
 
@@ -2945,6 +3386,14 @@ footer .greetings {
     }
 
     /*#endregion  */
+
+    /*#region LET'S CONNECT > HERO SECTION */
+    .lets_connect_hero_section .content {
+        max-width: 335px;
+        width: 100%;
+    }
+
+    /*#endregion */
 
 }
 
@@ -3008,24 +3457,42 @@ footer .greetings {
     /*#endregion  */
 
     /*#region LET'S CONNECT > HERO SECTION */
+    .lets_connect_hero_section .content {
+        max-width: 320px;
+        width: 100%;
+    }
+
     .lets_connect_hero_section .connect_background .gradient_4 {
         display: none;
     }
 
     .lets_connect_hero_section .connect_background .gradient_5 {
-        animation-delay: 0.1s;
+        animation-delay: 4.1s;
     }
 
     .lets_connect_hero_section .connect_background .gradient_6 {
-        animation-delay: 0.15s;
+        animation-delay: 4.15s;
     }
 
     .lets_connect_hero_section .connect_background .gradient_7 {
-        animation-delay: 0.2s;
+        animation-delay: 4.2s;
     }
 
     .lets_connect_hero_section .connect_background .gradient_8 {
-        animation-delay: 0.25s;
+        animation-delay: 4.25s;
+    }
+
+    /*#endregion */
+
+    /*#region LET'S CONNECT > CONTACT FORM SECTION */
+    .contact_form .lets_connect form {
+        border-radius: 30px;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .contact_form .form_background .gradient_4 {
+        display: none;
     }
 
     /*#endregion */
