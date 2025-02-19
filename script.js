@@ -8,6 +8,17 @@ document.addEventListener('DOMContentLoaded', (e)=>{
  }, 2000);
 })
 
+// Marquee Section
+
+    function updateMarqueeSpeed() {
+        let screenWidth = window.innerWidth;
+        let speed = screenWidth < 400 ? 20 : screenWidth < 768 ? 25 : 30; // Faster on smaller screens
+        document.documentElement.style.setProperty('--animation-speed', speed + 's');
+    }
+
+    window.addEventListener("resize", updateMarqueeSpeed);
+    updateMarqueeSpeed(); // Run on load
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const menuOverlay = document.querySelector(".mobile_menu_overlay");
