@@ -5,7 +5,7 @@ const splash = document.querySelector ('#splash_screen_loading');
 document.addEventListener('DOMContentLoaded', (e)=>{
  setTimeout(()=>{
     splash.classList.add('display-none');
- }, 4000);
+ }, 2000);
 })
 
 
@@ -111,97 +111,6 @@ document.addEventListener("DOMContentLoaded", () => {
   achievementItems.forEach((item) => observer.observe(item));
 });
 
-// // GNOSTIC Tabbing Section
-// document.addEventListener("DOMContentLoaded", () => {
-//   const tabButtons = document.querySelectorAll(".tab-btn");
-//   const tabPanels = document.querySelectorAll(".tab-panel");
-
-//   tabButtons.forEach((button) => {
-//     button.addEventListener("click", () => {
-//       // Remove active class from all buttons and panels
-//       tabButtons.forEach((btn) => btn.classList.remove("active"));
-//       tabPanels.forEach((panel) => panel.classList.remove("active"));
-
-//       // Add active class to clicked button and corresponding panel
-//       button.classList.add("active");
-//       const tabId = button.getAttribute("data-tab");
-//       document.getElementById(tabId).classList.add("active");
-//     });
-//   });
-// });
-
-// // GNOSTIC Accordion Section
-// document.addEventListener("DOMContentLoaded", () => {
-//   const headers = document.querySelectorAll(".accordion-header");
-
-//   headers.forEach((header) => {
-//     header.addEventListener("click", () => {
-//       const content = header.nextElementSibling;
-//       const isOpen = content.style.height && content.style.height !== "0px";
-
-//       // Close all accordions
-//       document.querySelectorAll(".accordion-content").forEach((item) => {
-//         item.style.height = "0";
-//         item.style.paddingTop = "0";
-//         item.style.paddingBottom = "0";
-//       });
-
-//       document
-//         .querySelectorAll(".accordion-header")
-//         .forEach((hdr) => hdr.classList.remove("active"));
-
-//       // Toggle the clicked one
-//       if (!isOpen) {
-//         content.style.height = "auto";
-//         content.style.padding = "40px";
-//         header.classList.add("active");
-//       }
-//     });
-//   });
-// });
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   // Get all the tab buttons
-//   const tabButtons = document.querySelectorAll(".tab-btn");
-//   const tabPanels = document.querySelectorAll(".tab-panel");
-
-//   // Function to switch tabs
-//   function switchTab(targetTab) {
-//     tabButtons.forEach((btn) => {
-//       btn.classList.remove("active"); // Remove active class from all buttons
-//     });
-//     targetTab.classList.add("active"); // Add active class to clicked button
-
-//     const targetTabContent = document.querySelector(
-//       `#${targetTab.dataset.tab}`
-//     );
-
-//     tabPanels.forEach((panel) => {
-//       panel.classList.remove("active"); // Hide all tab panels
-//     });
-
-//     targetTabContent.classList.add("active"); // Show the active tab panel
-
-//     // Ensure accordion items for the selected tab are hidden if needed
-//     const accordionItems = targetTabContent.querySelectorAll(".accordion-item");
-//     accordionItems.forEach((item) => {
-//       const accordionHeader = item.querySelector(".accordion-header");
-//       const accordionContent = item.querySelector(".accordion-content");
-
-//       // Reset accordion content height to 0
-//       accordionContent.style.height = "0";
-//       accordionHeader.classList.remove("active");
-//     });
-//   }
-
-//   // Add event listeners for tab buttons
-//   tabButtons.forEach((button) => {
-//     button.addEventListener("click", () => {
-//       switchTab(button);
-//     });
-//   });
-// });
-
 const accordionHeaders = document.querySelectorAll(".accordion-header");
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -278,35 +187,6 @@ document.addEventListener("DOMContentLoaded", function () {
     switchTab(tabButtons[0]);
   }
 });
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   const selectWrapper = document.querySelector(".custom-select");
-//   const select = document.querySelector(".custom-select select");
-
-//   select.addEventListener("click", function () {
-//     selectWrapper.classList.toggle("open");
-
-//   });
-
-//   select.addEventListener("blur", function () {
-//     setTimeout(() => selectWrapper.classList.remove("open"), 200);
-//   });
-// });
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   const customSelect = document.getElementById("customSelect");
-//   const chevronIcon = document.getElementById("chevronIcon");
-//   const dropdown = document.getElementById("dropdown");
-//   customSelect.addEventListener("click", function () {
-//     chevronIcon.classList.toggle("rotate");
-//   });
-//   // Close when clicking outside
-//   document.addEventListener("click", function (event) {
-//     if (!customSelect.contains(event.target)) {
-//       chevronIcon.classList.remove("rotate");
-//     }
-//   });
-// });
 
 document.addEventListener("DOMContentLoaded", function () {
   const customSelect = document.querySelector(".custom-select");
