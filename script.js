@@ -216,3 +216,77 @@ document.addEventListener("DOMContentLoaded", function () {
     console.error("Elements not found in DOM.");
   }
 });
+
+
+
+
+// Animations Section
+
+// Footer Section
+document.addEventListener("DOMContentLoaded", function () {
+  const footer = document.querySelector("footer");
+  const socialIcons = document.querySelectorAll("footer .social_accounts a");
+
+  const observer = new IntersectionObserver(
+      (entries) => {
+          entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                  footer.classList.add("show");
+
+                  // Animate social icons sequentially
+                  socialIcons.forEach((icon, index) => {
+                      setTimeout(() => {
+                          icon.classList.add("show");
+                      }, index * 200);
+                  });
+
+                  observer.unobserve(entry.target);
+              }
+          });
+      },
+      { threshold: 0.1 }
+  );
+
+  observer.observe(footer);
+});
+
+// Homepage > Technical Skills Section
+document.addEventListener("DOMContentLoaded", function () {
+  const tools = document.querySelectorAll(".tool");
+
+  const observer = new IntersectionObserver(
+      (entries) => {
+          entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                  entry.target.classList.add("show");
+                  observer.unobserve(entry.target);
+              }
+          });
+      },
+      { threshold: 0.1 } // Triggers animation when slightly visible
+  );
+
+  tools.forEach((tool) => observer.observe(tool));
+});
+
+
+// Homepage > My Work Section
+document.addEventListener("DOMContentLoaded", function () {
+  const myWork = document.querySelector(".my_work");
+  const workItems = document.querySelectorAll(".work_item");
+
+  const observer = new IntersectionObserver(
+      (entries) => {
+          entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                  entry.target.classList.add("show");
+                  observer.unobserve(entry.target);
+              }
+          });
+      },
+      { threshold: 0.1 }
+  );
+
+  observer.observe(myWork);
+  workItems.forEach((item) => observer.observe(item));
+});
