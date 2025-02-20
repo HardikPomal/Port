@@ -20,6 +20,26 @@ document.addEventListener('DOMContentLoaded', (e)=>{
     updateMarqueeSpeed(); // Run on load
 
 
+// Technical Skills Section
+document.addEventListener("DOMContentLoaded", function () {
+  const tools = document.querySelectorAll(".tool");
+
+  const observer = new IntersectionObserver(
+      (entries) => {
+          entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                  entry.target.classList.add("show");
+              }
+          });
+      },
+      { threshold: 1 } // Adjust as needed
+  );
+
+  tools.forEach((tool) => {
+      observer.observe(tool);
+  });
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   const menuOverlay = document.querySelector(".mobile_menu_overlay");
   const menuToggle = document.querySelector("#menu_toggle");

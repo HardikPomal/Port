@@ -1099,6 +1099,17 @@ footer .greetings {
     height: 48px;
 }
 
+.tool {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.tool.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
 /*#endregion */
 
 /*#region HOMEPAGE > MY WORK SECTION */
