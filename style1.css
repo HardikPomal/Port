@@ -419,7 +419,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 99999999;
 }
 
 #splash_screen_loading.display-none {
@@ -446,7 +446,7 @@ header {
     margin: 0 auto;
     position: fixed;
     top: 20px;
-    z-index: 99999999;
+    z-index: 99999997;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -553,13 +553,13 @@ header nav ul .mobile_menu {
     height: 100vh;
     background: var(--black-950);
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
     z-index: 99999998;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .mobile_menu_overlay .say_hello {
@@ -663,14 +663,13 @@ header nav ul .mobile_menu {
     width: 100%;
 }
 
-
 .mobile_menu_overlay.show .mobile_menu_nav .main_menu .main_menu_item {
     opacity: 1;
     transform: translateY(0);
 }
 
 .mobile_menu_close {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
     background: var(--primary-400);
@@ -1140,16 +1139,27 @@ footer .social_accounts a.show {
     height: 48px;
 }
 
+@keyframes pOpOut {
+    from {
+        opacity: 0;
+        scale: 0.95;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
 .tool {
     opacity: 0;
-    transform: scale(0.9);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .tool.show {
-    opacity: 1;
-    transform: scale(1);
+    animation: pOpOut 0.6s ease-out forwards;
 }
+
+
 
 /*#endregion */
 
@@ -1256,38 +1266,85 @@ footer .social_accounts a.show {
     position: relative;
 }
 
+/* General Fade-in & Slide Animation */
+@keyframes fAdeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide-in from different directions */
+@keyframes sLideFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes sLideFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes sLideFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ---- Applying Animations ---- */
+
+/* Main My Work Section */
 .my_work {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .my_work.show {
-    opacity: 1;
-    transform: translateY(0);
+    animation: fAdeSlideIn 0.8s ease-out forwards;
 }
 
+/* Individual Work Items */
 .work_item {
     opacity: 0;
-    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.gnostic {
-    transform: translateY(-10%);
+/* Applying Different Slide-in Effects */
+.work_item.show.gnostic {
+    animation: sLideFromTop 0.8s ease-out forwards;
 }
 
-.medus {
-    transform: translateX(-10%);
+.work_item.show.medus {
+    animation: sLideFromLeft 0.8s ease-out forwards;
 }
 
-.learnerhub {
-    transform: translateX(10%);
+.work_item.show.learnerhub {
+    animation: sLideFromRight 0.8s ease-out forwards;
 }
 
-.work_item.show {
-    opacity: 1;
-    transform: translate(0, 0);
-}
 
 /*#endregion */
 

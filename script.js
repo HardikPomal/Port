@@ -20,36 +20,42 @@ document.addEventListener('DOMContentLoaded', (e)=>{
     updateMarqueeSpeed(); // Run on load
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const menuOverlay = document.querySelector(".mobile_menu_overlay");
-  const menuToggle = document.querySelector("#menu_toggle");
-  const closeButton = document.querySelector(".mobile_menu_close");
-  const navLinks = document.querySelectorAll(".mobile_menu_nav ul li");
-
-  // Open menu
-  menuToggle.addEventListener("click", () => {
-    menuOverlay.classList.add("show");
-
-    // Animate nav links (wipe-in from bottom)
-    navLinks.forEach((link, index) => {
-      setTimeout(() => {
-        link.style.opacity = 1; // Fade-in
-        link.style.transform = "translateY(0)"; // Move to final position
-      }, index * 100); // Delay each link by 100ms
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuOverlay = document.querySelector(".mobile_menu_overlay");
+      const menuToggle = document.querySelector("#menu_toggle");
+      const closeButton = document.querySelector(".mobile_menu_close");
+      const navLinks = document.querySelectorAll(".mobile_menu_nav ul li");
+      const body = document.body; // Select the body
+    
+      // Open menu
+      menuToggle.addEventListener("click", () => {
+        menuOverlay.classList.add("show");
+        body.style.overflow = "hidden"; // Disable background scrolling
+        body.style.height = "100vh"; // Prevents height-based scrolling
+    
+        // Animate nav links (wipe-in from bottom)
+        navLinks.forEach((link, index) => {
+          setTimeout(() => {
+            link.style.opacity = 1; // Fade-in
+            link.style.transform = "translateY(0)"; // Move to final position
+          }, index * 100); // Delay each link by 100ms
+        });
+      });
+    
+      // Close menu
+      closeButton.addEventListener("click", () => {
+        menuOverlay.classList.remove("show");
+        body.style.overflow = ""; // Restore scrolling
+        body.style.height = ""; // Reset height
+    
+        // Reset nav links to original state
+        navLinks.forEach((link) => {
+          link.style.opacity = 0; // Fade-out
+          link.style.transform = "translateY(20px)"; // Move down
+        });
+      });
     });
-  });
-
-  // Close menu
-  closeButton.addEventListener("click", () => {
-    menuOverlay.classList.remove("show");
-
-    // Reset nav links to original state
-    navLinks.forEach((link) => {
-      link.style.opacity = 0; // Fade-out
-      link.style.transform = "translateY(20px)"; // Move down
-    });
-  });
-});
+    
 
 // Navbar Toggle
 document.addEventListener("DOMContentLoaded", function () {
@@ -68,6 +74,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+
 
 // Navbar My Work Dropdown
 document.addEventListener("DOMContentLoaded", () => {
@@ -263,11 +271,12 @@ document.addEventListener("DOMContentLoaded", function () {
               }
           });
       },
-      { threshold: 0.1 } // Triggers animation when slightly visible
+      { threshold: 0.6 } // Ensures animation starts only when 10% is visible
   );
 
   tools.forEach((tool) => observer.observe(tool));
 });
+
 
 
 // Homepage > My Work Section
@@ -284,7 +293,7 @@ document.addEventListener("DOMContentLoaded", function () {
               }
           });
       },
-      { threshold: 0.1 }
+      { threshold: 0.4 } // Ensures animation triggers when at least 10% is visible
   );
 
   observer.observe(myWork);
