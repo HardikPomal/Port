@@ -2966,6 +2966,20 @@ footer .social_accounts a.show {
     gap: 20px;
 }
 
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-50px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
 .design_adventure .content .design_process .step_1 .left_content svg,
 .design_adventure .content .design_process .step_1 .right_content svg,
 .design_adventure .content .design_process .step_3 .left_content svg,
@@ -2975,7 +2989,9 @@ footer .social_accounts a.show {
 .design_adventure .content .design_process .step_2 .right_content svg,
 .design_adventure .content .design_process .step_4 .right_content svg {
     margin: 0 auto;
+    animation: floatAnimation 3s ease-in-out infinite;
 }
+
 
 .design_adventure .content .design_process .step_1 .right_content h4,
 .design_adventure .content .design_process .step_1 .right_content p,
