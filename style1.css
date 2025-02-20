@@ -1179,6 +1179,8 @@ footer .social_accounts a.show {
     gap: 20px;
     width: 100%;
     grid-template-columns: repeat(2, 1fr);
+    position: relative;
+    background-color: var(--black-950);
 }
 
 .my_work .work_content .work_item_content {
