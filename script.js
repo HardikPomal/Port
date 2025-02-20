@@ -293,7 +293,7 @@ document.addEventListener("DOMContentLoaded", function () {
               }
           });
       },
-      { threshold: 0.4 } // Ensures animation triggers when at least 10% is visible
+      { threshold: 0.1 } // Ensures animation triggers when at least 10% is visible
   );
 
   observer.observe(myWork);
