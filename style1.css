@@ -771,6 +771,47 @@ footer .greetings {
     color: var(--black-950);
 }
 
+footer {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+footer.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Social Icons Sliding in One by One (Scoped to Footer) */
+footer .social_accounts a {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Adding delay for each icon to appear sequentially */
+footer .social_accounts a:nth-child(1) {
+    transition-delay: 0.2s;
+}
+
+footer .social_accounts a:nth-child(2) {
+    transition-delay: 0.4s;
+}
+
+footer .social_accounts a:nth-child(3) {
+    transition-delay: 0.6s;
+}
+
+footer .social_accounts a:nth-child(4) {
+    transition-delay: 0.8s;
+}
+
+/* When they appear, they fade in smoothly */
+footer .social_accounts a.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 /*#endregion */
 
 /*#region HOMEPAGE > HERO SECTION */
@@ -1211,6 +1252,29 @@ footer .greetings {
     gap: 20px;
     z-index: 2;
     position: relative;
+}
+
+.work_item {
+    opacity: 0;
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gnostic {
+    transform: translateY(-60px);
+    /* Slightly increased for a more noticeable effect */
+}
+
+.medus {
+    transform: translateX(-60px);
+}
+
+.learnerhub {
+    transform: translateX(60px);
+}
+
+.work_item.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /*#endregion */
