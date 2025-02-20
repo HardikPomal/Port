@@ -2971,7 +2971,9 @@ footer .social_accounts a.show {
 .design_adventure .content .design_process .step_3 .left_content svg,
 .design_adventure .content .design_process .step_3 .right_content svg,
 .design_adventure .content .design_process .step_5 .left_content svg,
-.design_adventure .content .design_process .step_5 .right_content svg {
+.design_adventure .content .design_process .step_5 .right_content svg,
+.design_adventure .content .design_process .step_2 .right_content svg,
+.design_adventure .content .design_process .step_4 .right_content svg {
     margin: 0 auto;
 }
 
