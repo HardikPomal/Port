@@ -2839,10 +2839,13 @@ footer .social_accounts a.show {
 /*#region ABOUT ME > DESIGN ADVENTURE SECTION */
 .design_adventure {
     padding: 100px 0px;
-    background-image: url(./assets/img/design_adventure_bg.png);
-    background-size: 100%;
-    background-position: top center;
-    object-fit: cover;
+    background: radial-gradient(circle at top,
+            #C7B8FA 0%,
+            #AC8FF6 22%,
+            #9161F1 37%,
+            #212430 59%,
+            #212430 91%,
+            #212430 100%);
     width: 100%;
     border-top-left-radius: 180px;
     border-top-right-radius: 180px;
@@ -2861,6 +2864,7 @@ footer .social_accounts a.show {
     align-items: center;
     flex-direction: column;
     gap: 20px;
+    text-align: center;
 }
 
 .design_adventure .content .design_process .divider {
@@ -2902,6 +2906,92 @@ footer .social_accounts a.show {
     margin: 0 auto;
 }
 
+.design_adventure .content .design_process .step_1,
+.design_adventure .content .design_process .step_2,
+.design_adventure .content .design_process .step_3,
+.design_adventure .content .design_process .step_4,
+.design_adventure .content .design_process .step_5 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 40px;
+}
+
+.design_adventure .content .design_process .step_1 .center_content,
+.design_adventure .content .design_process .step_2 .center_content,
+.design_adventure .content .design_process .step_3 .center_content {
+    min-width: 100px;
+    max-width: 200px;
+    width: 100%;
+    min-height: 200px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 250px;
+    border: 2px dashed var(--black-50);
+}
+
+.design_adventure .content .design_process .step_4 .center_content,
+.design_adventure .content .design_process .step_5 .center_content {
+    min-width: 100px;
+    max-width: 200px;
+    width: 100%;
+    min-height: 200px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 250px;
+    border: 2px dashed var(--primary-600);
+}
+
+.design_adventure .content .design_process .left_content,
+.design_adventure .content .design_process .center_content,
+.design_adventure .content .design_process .right_content,
+.design_adventure .content .design_process .step_1 .right_content h4,
+.design_adventure .content .design_process .step_1 .right_content p,
+.design_adventure .content .design_process .step_3 .right_content h4,
+.design_adventure .content .design_process .step_3 .right_content p,
+.design_adventure .content .design_process .step_5 .right_content h4,
+.design_adventure .content .design_process .step_5 .right_content p {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.design_adventure .content .design_process .step_1 .left_content svg,
+.design_adventure .content .design_process .step_1 .right_content svg,
+.design_adventure .content .design_process .step_3 .left_content svg,
+.design_adventure .content .design_process .step_3 .right_content svg,
+.design_adventure .content .design_process .step_5 .left_content svg,
+.design_adventure .content .design_process .step_5 .right_content svg {
+    margin: 0 auto;
+}
+
+.design_adventure .content .design_process .step_1 .right_content h4,
+.design_adventure .content .design_process .step_1 .right_content p,
+.design_adventure .content .design_process .step_3 .right_content h4,
+.design_adventure .content .design_process .step_3 .right_content p,
+.design_adventure .content .design_process .step_5 .right_content h4,
+.design_adventure .content .design_process .step_5 .right_content p {
+    text-align: left;
+}
+
+.design_adventure .content .design_process .step_2 .left_content h4,
+.design_adventure .content .design_process .step_2 .left_content p,
+.design_adventure .content .design_process .step_4 .left_content h4,
+.design_adventure .content .design_process .step_4 .left_content p {
+    text-align: right;
+}
+
+/*#endregion */
 
 
 
@@ -3021,6 +3111,14 @@ footer .social_accounts a.show {
     .about_me_hero_section {
         border-bottom-right-radius: 130px;
         border-bottom-left-radius: 130px;
+    }
+
+    /*#endregion */
+
+    /*#region ABOUT ME > DESIGN PROCESS */
+    .design_adventure {
+        border-top-left-radius: 130px;
+        border-top-right-radius: 130px;
     }
 
     /*#endregion */
@@ -3187,6 +3285,39 @@ footer .social_accounts a.show {
     }
 
     /*#endregion */
+
+    /*#region ABOUT ME > Design Process */
+    .design_adventure {
+        border-top-left-radius: 100px;
+        border-top-right-radius: 100px;
+    }
+
+    .design_adventure .content .design_process .step_1 .left_content,
+    .design_adventure .content .design_process .step_3 .left_content,
+    .design_adventure .content .design_process .step_5 .left_content,
+    .design_adventure .content .design_process .step_2 .right_content,
+    .design_adventure .content .design_process .step_4 .right_content {
+        display: none;
+    }
+
+    .design_adventure .content .design_process .step_2,
+    .design_adventure .content .design_process .step_4 {
+        flex-direction: row-reverse;
+    }
+
+    .design_adventure .content .design_process .divider {
+        margin: unset;
+    }
+
+    .design_adventure .content .design_process .step_2 .left_content h4,
+    .design_adventure .content .design_process .step_2 .left_content p,
+    .design_adventure .content .design_process .step_4 .left_content h4,
+    .design_adventure .content .design_process .step_4 .left_content p {
+        text-align: left;
+    }
+
+    /*#region */
+
 
 }
 
@@ -3499,6 +3630,21 @@ footer .social_accounts a.show {
 
     /*#endregion */
 
+    /*#region ABOUT ME > DESIGN PROCESS SECTION */
+    .design_adventure {
+        border-top-left-radius: 80px;
+        border-top-right-radius: 80px;
+    }
+
+    .design_adventure .content .design_process .step_1,
+    .design_adventure .content .design_process .step_2,
+    .design_adventure .content .design_process .step_3,
+    .design_adventure .content .design_process .step_4,
+    .design_adventure .content .design_process .step_5 {
+        align-items: unset;
+    }
+
+    /*#endregion */
 }
 
 
@@ -3691,6 +3837,23 @@ footer .social_accounts a.show {
     }
 
     /*#endregion */
+
+    /*#region ABOUT ME > DESIGN PROCESS SECTION */
+    .design_adventure .content .design_process .step_1 .center_content,
+    .design_adventure .content .design_process .step_2 .center_content,
+    .design_adventure .content .design_process .step_3 .center_content,
+    .design_adventure .content .design_process .step_4 .center_content,
+    .design_adventure .content .design_process .step_5 .center_content {
+        min-width: 150px;
+        width: fit-content;
+    }
+
+    /*#endregion */
+
+    .design_adventure .content .design_process .divider {
+        width: 150px;
+    }
+
 }
 
 
@@ -3753,6 +3916,22 @@ footer .social_accounts a.show {
     .lets_connect_hero_section .content {
         max-width: 335px;
         width: 100%;
+    }
+
+    /*#endregion */
+
+    /*#region ABOUT ME > DESIGN PROCESS SECTION */
+    .design_adventure .content .design_process .step_1 .center_content,
+    .design_adventure .content .design_process .step_2 .center_content,
+    .design_adventure .content .design_process .step_3 .center_content,
+    .design_adventure .content .design_process .step_4 .center_content,
+    .design_adventure .content .design_process .step_5 .center_content {
+        min-width: 120px;
+        width: fit-content;
+    }
+
+    .design_adventure .content .design_process .divider {
+        width: 120px;
     }
 
     /*#endregion */
@@ -3855,6 +4034,22 @@ footer .social_accounts a.show {
 
     .contact_form .form_background .gradient_4 {
         display: none;
+    }
+
+    /*#endregion */
+
+    /*#region ABOUT ME > DESIGN PROCESS SECTION */
+    .design_adventure .content .design_process .step_1 .center_content,
+    .design_adventure .content .design_process .step_2 .center_content,
+    .design_adventure .content .design_process .step_3 .center_content,
+    .design_adventure .content .design_process .step_4 .center_content,
+    .design_adventure .content .design_process .step_5 .center_content {
+        min-width: 100px;
+        width: fit-content;
+    }
+
+    .design_adventure .content .design_process .divider {
+        width: 100px;
     }
 
     /*#endregion */
