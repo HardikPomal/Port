@@ -2735,6 +2735,7 @@ footer .social_accounts a.show {
     transform: translateY(50%);
     opacity: 0;
     animation: slideInFromBottom 1.5s ease-out forwards;
+    animation-delay: 2s;
 }
 
 .about_me_hero_section .title {
@@ -2906,6 +2907,21 @@ footer .social_accounts a.show {
     margin: 0 auto;
 }
 
+/* Initial hidden state */
+[data-animate="step"] {
+    opacity: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path 1s ease-out, opacity 0.8s ease-out;
+}
+
+/* Revealed state when in view */
+[data-animate="step"].in-view {
+    opacity: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+
+
 .design_adventure .content .design_process .step_1,
 .design_adventure .content .design_process .step_2,
 .design_adventure .content .design_process .step_3,
@@ -3022,6 +3038,15 @@ footer .social_accounts a.show {
     border-radius: 80px;
     overflow: hidden;
     padding: 100px 50px;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+/* Pop-out effect */
+.banner_content.popout-animate {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .shape {

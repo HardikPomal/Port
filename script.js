@@ -299,3 +299,42 @@ document.addEventListener("DOMContentLoaded", function () {
   observer.observe(myWork);
   workItems.forEach((item) => observer.observe(item));
 });
+
+
+// About Me Page > Design Process Section
+// Check if the element is in the viewport
+function isInView(element) {
+  const rect = element.getBoundingClientRect();
+  return rect.top <= window.innerHeight - 100;
+}
+
+// Handle the scroll event
+function handleScroll() {
+  const steps = document.querySelectorAll('[data-animate="step"]');
+  steps.forEach((step) => {
+    if (isInView(step)) {
+      step.classList.add('in-view');
+    }
+  });
+}
+
+// Attach scroll event
+window.addEventListener('scroll', handleScroll);
+document.addEventListener('DOMContentLoaded', handleScroll);
+
+
+
+// About Me Page > Contact Banner Section
+const contactBanner = document.querySelector('.banner_content');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      contactBanner.classList.add('popout-animate');
+    }
+  });
+}, {
+  threshold: 0.5, // Trigger when 50% of the section is visible
+});
+
+observer.observe(contactBanner);
