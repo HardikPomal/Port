@@ -3011,6 +3011,49 @@ footer .social_accounts a.show {
 
 /*#endregion */
 
+/*#region ABOUT ME > CONTACT BANNER */
+.contact_banner {
+    margin: 100px 0px;
+}
+
+.banner_content {
+    position: relative;
+    background-color: var(--black-900);
+    border-radius: 80px;
+    overflow: hidden;
+    padding: 100px 50px;
+}
+
+.shape {
+    position: absolute;
+    width: 314px;
+    height: auto;
+}
+
+.shape-top-right {
+    top: 0px;
+    right: 0px;
+}
+
+.shape-bottom-left {
+    bottom: 0px;
+    left: 0px;
+    rotate: 180deg;
+}
+
+.center_content {
+    text-align: center;
+    color: white;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+}
+
+/*#endregion */
 
 
 
@@ -3334,8 +3377,14 @@ footer .social_accounts a.show {
         text-align: left;
     }
 
-    /*#region */
+    /*#endregion */
 
+    /*#region ABOUT ME > CONTACT BANNER */
+    .banner_content {
+        padding: 100px 30px;
+    }
+
+    /*#endregion */
 
 }
 
@@ -3663,6 +3712,7 @@ footer .social_accounts a.show {
     }
 
     /*#endregion */
+
 }
 
 
@@ -3866,11 +3916,11 @@ footer .social_accounts a.show {
         width: fit-content;
     }
 
-    /*#endregion */
-
     .design_adventure .content .design_process .divider {
         width: 150px;
     }
+
+    /*#endregion */
 
 }
 
@@ -3954,8 +4004,14 @@ footer .social_accounts a.show {
 
     /*#endregion */
 
-}
+    /*#region ABOUT ME > CONTACT BANNER */
+    .banner_content {
+        border-radius: 60px;
+    }
 
+    /*#endregion */
+
+}
 
 @media (max-width: 320px) {
 
