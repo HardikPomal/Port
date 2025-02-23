@@ -1354,7 +1354,6 @@ footer .social_accounts a.show {
     background-image: url(./assets/img/my-work-hero-bg.jpg);
     background-repeat: no-repeat;
     background-position: center center;
-    object-fit: cover;
     position: relative;
     height: 800px;
     display: flex;
@@ -1368,9 +1367,45 @@ footer .social_accounts a.show {
     gap: 40px;
 }
 
-.my_work_hero_section .content .title {
-    display: grid;
-    gap: 20px;
+.my_work_hero_section .title h1,
+.my_work_hero_section .title p,
+.my_work_hero_section .thumbnail img {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1.2s ease-out forwards;
+    animation-delay: 2s; 
+}
+
+.my_work_hero_section .title p {
+    animation-delay: 2.3s; 
+}
+
+.my_work_hero_section .thumbnail img {
+    transform: scale(0.9);
+    animation: fadeInScale 1.2s ease-out forwards;
+    animation-delay: 2.5s;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .my_work_hero_section .thumbnail img {
@@ -1381,31 +1416,31 @@ footer .social_accounts a.show {
 /*#endregion */
 
 /*#region MY WORK PAGE > SERVICES SECTION  */
-.services {
+.my_services {
     margin: 100px 0px;
 }
 
-.services .content {
+.my_services .content {
     display: grid;
     gap: 80px;
 }
 
-.services .content .title {
+.my_services .content .title {
     display: grid;
     gap: 20px;
     text-align: center;
 }
 
-.services .content .services_box {
+.my_services .content .my_services_box {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
-.services .content .services_box .mobile_app_design,
-.services .content .services_box .website_design,
-.services .content .services_box .web_app_design,
-.services .content .services_box .graphic_design {
+.my_services .content .my_services_box .mobile_app_design,
+.my_services .content .my_services_box .website_design,
+.my_services .content .my_services_box .web_app_design,
+.my_services .content .my_services_box .graphic_design {
     background-color: var(--black-900);
     border-radius: 30px;
     padding: 30px;
@@ -1414,10 +1449,10 @@ footer .social_accounts a.show {
     display: grid;
 }
 
-.services .content .services_box .mobile_app_design .text,
-.services .content .services_box .website_design .text,
-.services .content .services_box .web_app_design .text,
-.services .content .services_box .graphic_design .text {
+.my_services .content .my_services_box .mobile_app_design .text,
+.my_services .content .my_services_box .website_design .text,
+.my_services .content .my_services_box .web_app_design .text,
+.my_services .content .my_services_box .graphic_design .text {
     gap: 20px;
     display: grid;
 }

@@ -409,7 +409,8 @@
         <div class="lets_connect">
             <div class="container">
                 <div class="form_content">
-                    <form class="contact-form">
+                    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="06c6696d-824b-4f57-a54f-bc8fdda602c5">
                         <div>
                             <label for="name">Name:</label>
                             <input type="text" placeholder="Enter your full name" id="name" name="name" required>
@@ -423,13 +424,13 @@
                         <div>
                             <label for="subject">Subject:</label>
                             <div class="custom-select">
-                                <select id="dropdown">
+                                <select id="dropdown" name="subject" required> <!-- Added name="subject" -->
                                     <option value="" disabled selected>Select a Subject...</option>
-                                    <option value="app">App Design</option>
-                                    <option value="website">Web Design</option>
-                                    <option value="dashboard">Web App Design</option>
-                                    <option value="graphic">Graphic Design</option>
-                                    <option value="other">Other</option>
+                                    <option value="App Design">App Design</option>
+                                    <option value="Web Design">Web Design</option>
+                                    <option value="Web App Design">Web App Design</option>
+                                    <option value="Graphic Design">Graphic Design</option>
+                                    <option value="Other">Other</option>
                                 </select>
                                 <!-- <span class="chevron"></span> -->
                                 <span class="chevron_icon">
@@ -450,12 +451,9 @@
                         </div>
 
                         <button type="submit" class="submit_button">
-                            <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M15.8537 7.64582C16.0493 7.84073 16.0499 8.15731 15.855 8.35292L10.39 13.8374C10.1751 14.0531 9.82574 14.0531 9.6108 13.8374L4.14582 8.35292C3.9509 8.15731 3.95147 7.84073 4.14708 7.64582C4.34269 7.4509 4.65927 7.45147 4.85418 7.64708L10.0004 12.8117L15.1466 7.64708C15.3415 7.45147 15.6581 7.4509 15.8537 7.64582Z"
-                                    fill="#ADB6CC" />
-                            </svg>
+                            <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.68412 2.11244C2.83657 1.98818 3.04771 1.96483 3.22363 2.05279L18.2236 9.55279C18.393 9.63749 18.5 9.81062 18.5 10C18.5 10.1894 18.393 10.3625 18.2236 10.4472L3.22363 17.9472C3.04771 18.0352 2.83657 18.0118 2.68412 17.8876C2.53167 17.7633 2.46623 17.5612 2.5169 17.3712L4.48255 10L2.5169 2.62884C2.46623 2.4388 2.53167 2.2367 2.68412 2.11244ZM5.38416 10.5L3.76911 16.5564L16.882 10L3.76911 3.44357L5.38416 9.5H12C12.2762 9.5 12.5 9.72386 12.5 10C12.5 10.2761 12.2762 10.5 12 10.5H5.38416Z" />
+                                </svg>                                                              
                             Submit
                         </button>
                     </form>
