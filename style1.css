@@ -1416,31 +1416,31 @@ footer .social_accounts a.show {
 /*#endregion */
 
 /*#region MY WORK PAGE > SERVICES SECTION  */
-.my_services {
+.services {
     margin: 100px 0px;
 }
 
-.my_services .content {
+.services .content {
     display: grid;
     gap: 80px;
 }
 
-.my_services .content .title {
+.services .content .title {
     display: grid;
     gap: 20px;
     text-align: center;
 }
 
-.my_services .content .my_services_box {
+.services .content .services_box {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
-.my_services .content .my_services_box .mobile_app_design,
-.my_services .content .my_services_box .website_design,
-.my_services .content .my_services_box .web_app_design,
-.my_services .content .my_services_box .graphic_design {
+.services .content .services_box .mobile_app_design,
+.services .content .services_box .website_design,
+.services .content .services_box .web_app_design,
+.services .content .services_box .graphic_design {
     background-color: var(--black-900);
     border-radius: 30px;
     padding: 30px;
@@ -1449,10 +1449,10 @@ footer .social_accounts a.show {
     display: grid;
 }
 
-.my_services .content .my_services_box .mobile_app_design .text,
-.my_services .content .my_services_box .website_design .text,
-.my_services .content .my_services_box .web_app_design .text,
-.my_services .content .my_services_box .graphic_design .text {
+.services .content .services_box .mobile_app_design .text,
+.services .content .services_box .website_design .text,
+.services .content .services_box .web_app_design .text,
+.services .content .services_box .graphic_design .text {
     gap: 20px;
     display: grid;
 }
