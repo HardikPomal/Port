@@ -2781,6 +2781,7 @@ footer .social_accounts a.show {
     justify-content: center;
     flex-direction: column;
     gap: 20px;
+    text-align: center;
 }
 
 .about_me_hero_section .title .action_button {
